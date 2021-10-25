@@ -1,2 +1,2 @@
-name     = "devopsthehardway"
-location = "uksouth"
+name     = "cljdevopshard"
+location = "eastus"
