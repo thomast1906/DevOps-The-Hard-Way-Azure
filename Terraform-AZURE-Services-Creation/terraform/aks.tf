@@ -1,20 +1,3 @@
-data "azurerm_subnet" "akssubnet" {
-  name                 = "snet-aks"
-  virtual_network_name = "vnet-${var.name}"
-  resource_group_name  = azurerm_resource_group.rg.name
-}
-
-data "azurerm_subnet" "appgwsubnet" {
-  name                 = "snet-appgw"
-  virtual_network_name = "vnet-${var.name}"
-  resource_group_name  = azurerm_resource_group.rg.name
-}
-
-data "azurerm_log_analytics_workspace" "workspace" {
-  name                = "la-${var.name}"
-  resource_group_name = azurerm_resource_group.rg.name
-}
-
 resource "azurerm_kubernetes_cluster" "k8s" {
   name                = "aks-${var.name}"
   location            = var.location
@@ -36,7 +19,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     name                 = "agentpool"
     node_count           = var.agent_count
     vm_size              = var.vm_size
-    vnet_subnet_id       = data.azurerm_subnet.akssubnet.id
+    vnet_subnet_id       = azurerm_subnet.aks_subnet.id
     type                 = "VirtualMachineScaleSets"
     orchestrator_version = var.kubernetes_version
   }
@@ -48,12 +31,12 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   addon_profile {
     oms_agent {
       enabled                    = var.addons.oms_agent
-      log_analytics_workspace_id = data.azurerm_log_analytics_workspace.workspace.id
+      log_analytics_workspace_id = azurerm_log_analytics_workspace.Log_Analytics_WorkSpace.id
     }
 
     ingress_application_gateway {
       enabled   = var.addons.ingress_application_gateway
-      subnet_id = data.azurerm_subnet.appgwsubnet.id
+      subnet_id = azurerm_subnet.app_gwsubnet.id
     }
 
   }
@@ -90,14 +73,9 @@ resource "azurerm_role_assignment" "node_infrastructure_update_scale_set" {
   ]
 }
 
-data "azurerm_container_registry" "acr" {
-  name                = "acr${var.name}"
-  resource_group_name = azurerm_resource_group.rg.name
-}
-
 resource "azurerm_role_assignment" "acr_pull" {
   principal_id         = azurerm_kubernetes_cluster.k8s.kubelet_identity[0].object_id
-  scope                = data.azurerm_container_registry.acr.id
+  scope                = azurerm_container_registry.acr.id
   role_definition_name = "acrpull"
   depends_on = [
     azurerm_kubernetes_cluster.k8s
