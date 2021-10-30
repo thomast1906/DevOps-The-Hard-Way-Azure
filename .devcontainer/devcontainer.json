@@ -24,11 +24,15 @@
 	// "postCreateCommand": "uname -a",
 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
+	//"remoteUser": "vscode",
 	"features": {
 		"kubectl-helm-minikube": "1.22",
 		"terraform": "1.0",
 		"github-cli": "latest",
-		"azure-cli": "latest"
+		"azure-cli": "latest",
+		"docker-from-docker": {
+			"version": "latest",
+			"moby": true
+		}
 	}
 }

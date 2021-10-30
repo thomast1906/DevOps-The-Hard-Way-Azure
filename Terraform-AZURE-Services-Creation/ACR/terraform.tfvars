@@ -1,2 +1,0 @@
-name     = "cljdevopshard"
-location = "eastus"
