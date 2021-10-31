@@ -68,3 +68,9 @@ jobs:
             repo: context.repo.repo,
             body: output
           })
+
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main'
+      id: apply
+      run: terraform apply -no-color -auto-approve
+      continue-on-error: false
