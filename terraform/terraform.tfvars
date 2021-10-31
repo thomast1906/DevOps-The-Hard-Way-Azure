@@ -6,6 +6,6 @@ aks_subnet_address_prefix  = "10.10.0.0/24"
 subnet_address_name        = "snet-appgw"
 subnet_address_prefix      = "10.10.1.0/24"
 kubernetes_version         = "1.22.2"
-agent_count                = 1
+agent_count                = 2
 vm_size                    = "Standard_DS2_v2"
 aks_admins_group_object_id = "3559d0b5-4d1c-496b-9150-a311c595af97"
