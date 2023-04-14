@@ -14,7 +14,9 @@ You'll see an output that specifies the service and deployment was created.
 4. Access uber-ui via Application Gateway
 `kubectl get ingress`
 
-`NAME      CLASS    HOSTS   ADDRESS         PORTS   AGE
-uber-ui   <none>   *       20.90.236.246   80      11s`
+```
+NAME      CLASS    HOSTS   ADDRESS         PORTS   AGE
+uber-ui   <none>   *       20.90.236.246   80      11s
+```
 
 Access the uber-ui using the address mentioned above, `http://20.90.236.246`
