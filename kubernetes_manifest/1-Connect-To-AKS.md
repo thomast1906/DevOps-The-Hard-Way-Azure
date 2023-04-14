@@ -6,8 +6,11 @@ Once you authenticate to AKS from your local terminal, a `kubeconfig` gets store
 
 ## Connecting To AKS
 
-1. Run the following command to connect to AKS:
+1. Get credentials for connection to the AKS:
 `az aks get-credentials --resource-group devopsthehardway-rg --name devopsthehardwayaks`
 
-2. Once connected, you should be able to run commands like the following to confirm you're connected:
+2. Convert credentials to format understood by kubelogin:
+`kubelogin convert-kubeconfig -l azurecli`
+
+3. You should now be able to run commands like the following to confirm you can communicate with the AKS:
 `kubectl get nodes`
