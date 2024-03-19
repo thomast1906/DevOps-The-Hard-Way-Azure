@@ -16,5 +16,7 @@ resource "azurerm_federated_identity_credential" "alb_federated_identity" {
 
   depends_on = [
     azurerm_user_assigned_identity.example,
+    azurerm_kubernetes_cluster.k8s
+
   ]
 }
