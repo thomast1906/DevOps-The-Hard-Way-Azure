@@ -45,12 +45,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   oms_agent {
     log_analytics_workspace_id = data.azurerm_log_analytics_workspace.workspace.id
   }
-
-
-  ingress_application_gateway {
-    gateway_id = azurerm_application_gateway.aks.id
-  }
-
+  
   network_profile {
     load_balancer_sku = "standard"
     network_plugin    = "azure"
@@ -63,9 +58,5 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   }
 
   tags = var.tags
-
-  depends_on = [
-    azurerm_application_gateway.aks
-  ]
 
 }
