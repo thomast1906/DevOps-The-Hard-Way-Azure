@@ -13,14 +13,14 @@ provider "azurerm" {
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
-  name                = "${var.name}aks"
-  location            = var.location
-  resource_group_name = data.azurerm_resource_group.resource_group.name
-  dns_prefix          = "${var.name}dns"
-  kubernetes_version  = var.kubernetes_version
-  oidc_issuer_enabled = true
+  name                      = "${var.name}aks"
+  location                  = var.location
+  resource_group_name       = data.azurerm_resource_group.resource_group.name
+  dns_prefix                = "${var.name}dns"
+  kubernetes_version        = var.kubernetes_version
+  oidc_issuer_enabled       = true
   workload_identity_enabled = true
-  node_resource_group = "${var.name}-node-rg"
+  node_resource_group       = "${var.name}-node-rg"
 
   linux_profile {
     admin_username = "ubuntu"
