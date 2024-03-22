@@ -45,10 +45,10 @@ jobs:
       id: init
       run: terraform init -backend-config="resource_group_name=$tf_resource_group_name" -backend-config="storage_account_name=$tf_storage_account_name" -backend-config="container_name=$tf_state_container" -backend-config="key=$tf_state_key"
       env:
-        ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
-        ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
       working-directory: "./Terraform-AZURE-Services-Creation/AKS"
 
     - name: Terraform Fmt
