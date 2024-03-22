@@ -54,7 +54,7 @@ jobs:
     - name: Terraform Fmt
       id: fmt
       run: terraform fmt
-      working-directory: ./terraform
+      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
 
     - name: Auto Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v5
