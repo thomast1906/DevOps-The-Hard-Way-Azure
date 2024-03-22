@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+# on:
+#   workflow_dispatch:
+
+jobs:
+  terraform-fmt-check:
+    if: github.event_name == 'pull_request'
+    defaults:
+      run:
+        working-directory: "./Terraform-AZURE-Services-Creation/AKS"
+    name: Terraform
+    environment: production
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      tf_resource_group_name: "thomasthorntoncloud"
+      tf_storage_account_name: "thomasthorntontfstate"
+      tf_state_container: "devopsthehardwaygithub"
+      tf_state_key: "terraform.tfstate"
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2.5.0
+ 
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v3
+ 
+    - name: Terraform Init
+      id: init
+      run: terraform init -backend-config="resource_group_name=$tf_resource_group_name" -backend-config="storage_account_name=$tf_storage_account_name" -backend-config="container_name=$tf_state_container" -backend-config="key=$tf_state_key"
+      env:
+        ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
+
+    - name: Terraform Fmt
+      id: fmt
+      run: terraform fmt
+      working-directory: ./terraform
+
+    - name: Auto Commit Changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Terraform fmt"
+        file_pattern: "*.tf *.tfvars"
+        commit_user_name: "github-actions[bot]"
+
+    - name: Terraform Plan  
+      id: plan
+      run: terraform plan -no-color -var deployment_subscription_id=$DEPLOYMENT_SUBSCRIPTION_ID
+      env:
+        ARM_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.TENANT_ID }}
+        DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
+      continue-on-error: false
