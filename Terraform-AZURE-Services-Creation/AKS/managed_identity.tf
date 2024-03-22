@@ -15,7 +15,7 @@ resource "azurerm_federated_identity_credential" "alb_federated_identity" {
   subject             = "system:serviceaccount:azure-alb-system:alb-controller-sa"
 
   depends_on = [
-    azurerm_user_assigned_identity.example,
+    azurerm_user_assigned_identity.alb_identity,
     azurerm_kubernetes_cluster.k8s
 
   ]
