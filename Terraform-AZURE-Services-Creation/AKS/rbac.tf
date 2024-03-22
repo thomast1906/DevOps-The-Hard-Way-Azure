@@ -31,7 +31,7 @@ resource "azurerm_role_assignment" "acr_pull" {
 resource "azurerm_role_assignment" "appgwcontainer" {
   principal_id       = azurerm_user_assigned_identity.alb_identity.principal_id
   scope              = data.azurerm_resource_group.resource_group.id
-  role_definition_id = "reader"
+  role_definition_name = "reader"
   depends_on = [
     azurerm_kubernetes_cluster.k8s,
     azurerm_user_assigned_identity.alb_identity
