@@ -29,8 +29,8 @@ resource "azurerm_role_assignment" "acr_pull" {
 }
 
 resource "azurerm_role_assignment" "appgwcontainer" {
-  principal_id         = azurerm_user_assigned_identity.alb_identity.principal_id
-  scope                = data.azurerm_resource_group.resource_group.id
+  principal_id       = azurerm_user_assigned_identity.alb_identity.principal_id
+  scope              = data.azurerm_resource_group.resource_group.id
   role_definition_id = "reader"
   depends_on = [
     azurerm_kubernetes_cluster.k8s,
@@ -39,8 +39,8 @@ resource "azurerm_role_assignment" "appgwcontainer" {
 }
 
 resource "azurerm_role_assignment" "appgwcontainersubnet" {
-  principal_id         = azurerm_user_assigned_identity.alb_identity.principal_id
-  scope                = data.azurerm_resource_group.resource_group.id
+  principal_id       = azurerm_user_assigned_identity.alb_identity.principal_id
+  scope              = data.azurerm_resource_group.resource_group.id
   role_definition_id = "4d97b98b-1d4f-4787-a291-c67834d212e7"
   depends_on = [
     azurerm_kubernetes_cluster.k8s,
@@ -49,8 +49,8 @@ resource "azurerm_role_assignment" "appgwcontainersubnet" {
 }
 
 resource "azurerm_role_assignment" "appgwcontainernoderg" {
-  principal_id         = azurerm_user_assigned_identity.alb_identity.principal_id
-  scope                = data.azurerm_resource_group.node_resource_group.id
+  principal_id       = azurerm_user_assigned_identity.alb_identity.principal_id
+  scope              = data.azurerm_resource_group.node_resource_group.id
   role_definition_id = "fbc52c3f-28ad-4303-a892-8a056630b8f1"
   depends_on = [
     azurerm_kubernetes_cluster.k8s,
