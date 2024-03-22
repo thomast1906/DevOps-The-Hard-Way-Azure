@@ -65,7 +65,7 @@ jobs:
 
     - name: Terraform Plan  
       id: plan
-      run: terraform plan -no-color -var deployment_subscription_id=$DEPLOYMENT_SUBSCRIPTION_ID
+      run: terraform plan -no-color -input=false -var deployment_subscription_id=$DEPLOYMENT_SUBSCRIPTION_ID
       env:
         ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
         ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
