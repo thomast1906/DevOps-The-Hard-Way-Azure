@@ -38,4 +38,13 @@ resource "azurerm_subnet" "app_gwsubnet" {
   resource_group_name  = data.azurerm_resource_group.resource_group.name
   virtual_network_name = azurerm_virtual_network.virtual_network.name
   address_prefixes     = [var.subnet_address_prefix]
+
+    delegation {
+    name = "delegation"
+
+    service_delegation {
+      name    = "Microsoft.ServiceNetworking/trafficControllers"
+     
+    }
+  }
 }
