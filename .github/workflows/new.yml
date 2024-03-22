@@ -37,7 +37,10 @@ jobs:
  
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
- 
+      with:
+        terraform_version: 1.7.4
+        terraform_wrapper: true
+
     - name: Terraform Init
       id: init
       run: terraform init -backend-config="resource_group_name=$tf_resource_group_name" -backend-config="storage_account_name=$tf_storage_account_name" -backend-config="container_name=$tf_state_container" -backend-config="key=$tf_state_key"
