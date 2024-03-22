@@ -74,3 +74,18 @@ jobs:
         DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       working-directory: "./Terraform-AZURE-Services-Creation/AKS"
       continue-on-error: false
+
+    - name: Terraform Apply  
+      id: apply
+      run: terraform apply -auto-approve -var deployment_subscription_id=$DEPLOYMENT_SUBSCRIPTION_ID
+      # if: github.ref == 'refs/heads/main'
+      env:
+        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+        DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
+      shell: bash
+      continue-on-error: false
+
