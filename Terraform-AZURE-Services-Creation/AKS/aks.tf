@@ -1,12 +1,17 @@
 terraform {
   required_version = ">= 1.5.7"
   backend "azurerm" {
-    resource_group_name  = "devopshardway-rg"
-    storage_account_name = "devopshardwaysa"
-    container_name       = "tfstate"
-    key                  = "aks-terraform.tfstate"
+    # resource_group_name  = "devopshardway-rg"
+    # storage_account_name = "devopshardwaysa"
+    # container_name       = "tfstate"
+    # key                  = "aks-terraform.tfstate"
+    resource_group_name  = "thomasthorntoncloud"
+    storage_account_name = "thomasthorntontfstate"
+    container_name       = "devopsthehardwaygithub"
+    key                  = "terraform.tfstate"
   }
 }
+
 
 provider "azurerm" {
   features {}

@@ -34,4 +34,5 @@ variable "tags" {
 }
 
 variable "deployment_subscription_id" {
+  default = "1"
 }
