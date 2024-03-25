@@ -12,7 +12,7 @@ resource "azurerm_federated_identity_credential" "alb_federated_identity" {
   audience            = ["api://AzureADTokenExchange"]
   issuer              = azurerm_kubernetes_cluster.k8s.oidc_issuer_url
   parent_id           = azurerm_user_assigned_identity.alb_identity.id
-  subject             = "system:serviceaccount:azure-alb-system:alb-controller-sa"
+  subject             = "system:serviceaccount:alb:alb-controller-sa"
 
   depends_on = [
     azurerm_user_assigned_identity.alb_identity,
