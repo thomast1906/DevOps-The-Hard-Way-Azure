@@ -37,6 +37,7 @@ You will be using the following technologies and platforms to set up a DevOps en
    - Store the Docker image in Azure ACR
 6. Kubernetes
    - To run the Docker image that's created for the containerized Uber app. Kubernetes, in this case, AKS, will be used to orchestrate the container.
+   - Azure Application Gateway for Containers will be deployed so you can view the App from your Kubernetes cluster
 7. CI/CD
    - Use GitHub Action to create an AKS cluster
 8. Automated testing

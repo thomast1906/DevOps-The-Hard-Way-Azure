@@ -6,7 +6,8 @@ In this lab you will create a Log Analytics workspace that will be used to view 
 
 1. You can find the Terraform configuration for Log Analytics [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/Log-Analytics). The Terraform configuration files are used to create the Log Analytiocs workspace. 
 
-The Terraform `main.tf` will do a few things:
+The Terraform `la.tf` will:
+- Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
 - Use the `azurerm_log_analytics_workspace` Terraform resource to create a Log Analytics workspace. 
 - Use the `azurerm_log_analytics_solution` Terraform resource to enable the Log Analytics solution ContainerInsights. 
 - Use the `uksouth` region, but feel free to change that if you'd like
