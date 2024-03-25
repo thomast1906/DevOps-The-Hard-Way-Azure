@@ -50,7 +50,7 @@ resource "azurerm_role_assignment" "appgwcontainernode" {
 
 #fixing for  "The client '62119122-6287-4620-98b4-bf86535e2ece' with object id '62119122-6287-4620-98b4-bf86535e2ece' does not have authorization to perform action 'Microsoft.ServiceNetworking/register/action' over scope '/subscriptions/XXXXX' or the scope is invalid. (As part of App Gw for containers - maanged by ALB controller setup)"
 data "azurerm_subscriptions" "thomasthorntoncloud" {
-  display_name_contains = var.subscriptionName
+  display_name_contains = "thomasthorntoncloud"
 }
 
 resource "azurerm_role_assignment" "appgwcontainerfix" {
