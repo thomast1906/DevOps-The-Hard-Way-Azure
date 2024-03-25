@@ -1,5 +1,7 @@
 # Create AKS Cluster With CICD
 
+Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+
 In this lab, you'll learn how to create an AKS cluster using GitHub Actions. The code can be found [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/AKS)
 
 
@@ -33,16 +35,16 @@ Now that the secrets are created, it's time to create the pipeline.
 
 1. Under the GitHub repository, click on the **Actions** tab
 2. You will see a workflow already called `CI`
-3. Select `CI` workflow and then select `Run workflow` `from` main branch
+3. Select `CI` workflow and then select `Run workflow` `from` main branch (Also note, the pipeline is configured to run also during a Pull Request and or a Push to the main branch)
 
 The pipeline does a few things:
-- On line 4, you'll see `workflow_dispatch`, which means the pipeline won't automatically run unless you kick it off. You can of course change this to have the pipeline automatically run if you, for example, push code to the `dev` or `main` branch.
+- On line 10, you'll see `workflow_dispatch`, which means the pipeline won't automatically run unless you kick it off. You can of course change this to have the pipeline automatically run if you, for example, push code to the `dev` or `main` branch.
 - The code is checked-out
 - Authentication occurs to Azure
 - Terraform is set up
-- Terraform format occurs
+- Terraform format occurs & formats incorrect terraform, then pushes back into the branch
 - Terraform init occurs
 - Terraform plan occurs
 - Terraform apply occurs
 
-4. Run the pipeline and watch as the pipeline automatically creates the AKS cluster
+4. Run the pipeline and watch as the pipeline automatically create the AKS cluster

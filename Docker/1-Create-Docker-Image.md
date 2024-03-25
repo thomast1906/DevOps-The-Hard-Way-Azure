@@ -34,11 +34,11 @@ Now that the Docker image is created, you can run the container locally just to 
 1. To run the Docker container, run the following command:
 `docker run -tid uberapp`
 
-- `t` stands for a TTY console
-- `i` stands for interactive
-- `d` stands for detach so your terminal isn't directly connected to the Docker container
+- `t` enables a TTY console.
+- `i` enables an interactive session.
+- `d` detaches the terminal from the Docker container.
 
-2. To confirm the Docker container is running, run the following command:
+2. Confirm that the Docker container is running by running the following command:
 `docker container ls`
 
-You should now see the container running.
+You should now see the container running successfully.

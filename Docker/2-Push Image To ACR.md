@@ -2,6 +2,9 @@
 
 The ACR repo will be where you store the Docker image that you created on your local computer in step 1.
 
+Ensure to replace `devopsthehardwayacr` with your ACR name and `v1` with the appropriate version tag if needed.
+
+
 ## Log Into The ECR Repository
 1. Log in to ACR with Azure CLI
 `az acr login --name devopsthehardwayacr`
@@ -14,3 +17,4 @@ The ACR repo will be where you store the Docker image that you created on your l
 ## Push The Docker Image To ACR
 1. Push the Docker image to ACR
 `docker push devopsthehardwayacr.azurecr.io/uberapp:v1`
+

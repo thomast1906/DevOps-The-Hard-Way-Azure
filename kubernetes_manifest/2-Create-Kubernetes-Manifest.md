@@ -1,18 +1,13 @@
 # Create The Kubernetes Manifest
 
-At this point you have successfully created a Docker image from the Uber app and stored it in ACR.
+Once you've successfully created a Docker image from the Uber app and stored it in Azure Container Registry (ACR), the next step is to configure the Kubernetes manifest for deploying the application to Azure Kubernetes Service (AKS).
 
-Now it's time to set up the Kubernetes manifest, which will take the application and deploy it to AKS.
+## Understanding the Manifest
 
-## The Manifest
+The Kubernetes manifest comprises three key components:
 
-The Kubernetes manifest will consist of two components:
-- The deployment
-- The service
-- The Application Gateway Ingress
+- The Deployment: This component manages the application's deployment within Kubernetes.
+- The Service: Responsible for exposing the Kubernetes application, allowing access from external sources such as load balancer hostnames or IPs.
+- Namespace: A mechanism for organizing and isolating resources within a Kubernetes cluster, enabling resource scoping.
 
-The deployment is what gets the application running in Kubernetes
-
-The service is what exposes the Kubernetes application so you can, for example, reach the frontend from a load balancer hostname or IP.
-
-The manifest `deployment.yml` can be found in the `kubernetes_manifest` directory. Ensure on line `31` to change the image URL to the one you have in your Azure account.
+The manifest `deployment.yml` can be found in the `kubernetes_manifest` directory. Ensure to update the image URL on line 39 to match the image stored in your Azure account before applying the manifest.
