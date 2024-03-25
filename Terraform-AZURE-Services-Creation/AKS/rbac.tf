@@ -52,7 +52,7 @@ resource "azurerm_role_assignment" "appgwcontainernode" {
 data "azurerm_subscription" "current" {
 }
 
-resource "azurerm_role_assignment" "appgwcontainer" {
+resource "azurerm_role_assignment" "appgwcontainerfix" {
   principal_id         = azurerm_user_assigned_identity.alb_identity.principal_id
   scope                = data.azurerm_subscription.current.subscription_id
   role_definition_name = "Network Contributor"
