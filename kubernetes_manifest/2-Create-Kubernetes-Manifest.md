@@ -9,10 +9,9 @@ Now it's time to set up the Kubernetes manifest, which will take the application
 The Kubernetes manifest will consist of two components:
 - The deployment
 - The service
-- The Application Gateway Ingress
 
 The deployment is what gets the application running in Kubernetes
 
 The service is what exposes the Kubernetes application so you can, for example, reach the frontend from a load balancer hostname or IP.
 
-The manifest `deployment.yml` can be found in the `kubernetes_manifest` directory. Ensure on line `31` to change the image URL to the one you have in your Azure account.
+The manifest `deployment.yml` can be found in the `kubernetes_manifest` directory. Ensure on line `39` to change the image URL to the one you have in your Azure account.
