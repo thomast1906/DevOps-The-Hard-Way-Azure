@@ -32,7 +32,3 @@ variable "aks_admins_group_object_id" {
 variable "tags" {
   type = map(string)
 }
-
-variable "deployment_subscription_id" {
-  default = "1"
-}
