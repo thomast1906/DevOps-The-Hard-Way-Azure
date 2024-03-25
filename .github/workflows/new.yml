@@ -43,7 +43,7 @@ jobs:
 
     - name: Terraform Init
       id: init
-      run: terraform init -backend-config="resource_group_name=$tf_resource_group_name" -backend-config="storage_account_name=$tf_storage_account_name" -backend-config="container_name=$tf_state_container" -backend-config="key=$tf_state_key"
+      run: terraform init
       env:
         ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
         ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
