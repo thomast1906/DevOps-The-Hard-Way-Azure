@@ -1,5 +1,7 @@
 # Create an Azure VNET
 
+Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+
 In this lab you will:
 - Create a Virtual Network (VNET) that will be used to deploy your AKS instance into
 - Create a Network Security Group (NSG) and assign to the relevant subnets

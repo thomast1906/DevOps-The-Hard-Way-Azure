@@ -1,5 +1,7 @@
 # Create an Azure Log Analytics Workspace
 
+Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+
 In this lab you will create a Log Analytics workspace that will be used to view container insights of your AKS Cluster
 
 ## Create the Log Analytics Workspace Terraform Configuration

@@ -1,5 +1,7 @@
 # Create an Azure Container Registry Repository
 
+Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+
 In this lab you will create a repository to store the Docker image that you created for the Uber app.
 
 ## Create the ACR Terraform Configuration

@@ -1,6 +1,6 @@
 # DevOps-The-Hard-Way-Azure
 
-This tutorial contains a full, real-world solution for setting up an environment that is using DevOps technologies and practices for deploying apps and cloud services/cloud infrastructure to Azure.
+Welcome to the DevOps-The-Hard-Way-Azure tutorial! This comprehensive guide provides a real-world solution for implementing DevOps practices and technologies to deploy applications and cloud services/infrastructure on Microsoft Azure.
 
 The repository contains free labs, documentation, diagrams, and docs for setting up an entire workflow and DevOps environment from a real-world perspective in Azure.
 
@@ -9,8 +9,9 @@ The scenario that you're currently facing is you work in an organization that is
 
 You're brought in to the company and team to make things more modern so the organization can not only succeed, but stay ahead of their competition. Management now understands the needs and complexity that comes with staying ahead of their competition and they know that they need to. Otherwise, the organization will fall...
 
+
 ## DevOps Solution
-The solution is to deploy the Uber API for the sign-up page. Currently this solution is sitting on a bunch of baremetal, but it's time to sprinkle a little DevOps on it.
+The solution is to deploy the Uber API for the sign-up page. Currently this solution is sitting on a bunch of baremetal, but it's time to sprinkle a little DevOps on it. Although we won't be coding the application itself, we'll cover the deployment process using DevOps tools and methodologies.
 
 ![](images/uber.png)
 
@@ -21,27 +22,16 @@ As a DevOps Engineer, you're more or less (most likely) not writing the app, but
 https://github.com/AdminTurnedDevOps/Python-Sample-Application
 
 ## Technology Details
-You will be using the following technologies and platforms to set up a DevOps environment.
+Get ready to utilise a range of cutting-edge technologies and platforms to establish your DevOps environment:
 
-1. Azure
-    - Azure will be used to host the application, cloud infrastructure, and any other services we may need to ensure the Uber app is deployed properly.
-2. GitHub
-    - To store the application and infrastructure/automation code
-3. Python
-    - Python will be used for the Uber app (it is written in Python) and some automation efforts that aren't in Terraform.
-4. Terraform
-   - Create an Azure ACR repository with Terraform
-   - Create an AKS cluster
-5. Docker
-   - Create a Docker image
-   - Store the Docker image in Azure ACR
-6. Kubernetes
-   - To run the Docker image that's created for the containerized Uber app. Kubernetes, in this case, AKS, will be used to orchestrate the container.
-   - Azure Application Gateway for Containers will be deployed so you can view the App from your Kubernetes cluster
-7. CI/CD
-   - Use GitHub Action to create an AKS cluster
-8. Automated testing
-    - Testing Terraform code with Checkov
+1. Azure: Hosts the application, cloud infrastructure, and necessary services.
+2. GitHub: Stores application and infrastructure/automation code.
+3. Python: Powers the Uber application and some automation tasks.
+4. Terraform: Orchestrates Azure resources, including Azure Container Registry (ACR) and Azure Kubernetes Service (AKS).
+5. Docker: Creates containerized images for the Uber app and stores them in Azure ACR.
+6. Kubernetes: Orchestrates Docker containers, with AKS managing our Kubernetes clusters.
+7. CI/CD: Automates deployment using GitHub Actions.
+8. Automated Testing: Ensures Terraform code integrity using Checkov.
 
 ## Labs
 1. [Prerequisites](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/prerequisites.md)
@@ -68,3 +58,10 @@ In this scenario, the Terraform State file will be stored in remote state locati
     - [Install And Run Checkov](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/Terraform-Static-Code-Analysis/1-Checkov-For-Terraform.md)
 6. CICD - The purpose of this section is to automatically create an AKS cluster with CICD using GitHub Actions
     - [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
+
+## Conclusion
+By following this tutorial, you'll not only deploy an example app on Azure but also gain valuable insights into modern DevOps practices and tools. 
+
+Let's embark on this journey to transform your organization into a lean, agile, and competitive force in the digital landscape. Happy deploying! 🚀🔧
+
+

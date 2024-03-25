@@ -1,5 +1,7 @@
 # Create AKS Cluster With CICD
 
+Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+
 In this lab, you'll learn how to create an AKS cluster using GitHub Actions. The code can be found [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/AKS)
 
 
