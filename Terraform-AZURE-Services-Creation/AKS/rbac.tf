@@ -47,3 +47,17 @@ resource "azurerm_role_assignment" "appgwcontainernode" {
     azurerm_user_assigned_identity.alb_identity
   ]
 }
+
+#fixing for  "The client '62119122-6287-4620-98b4-bf86535e2ece' with object id '62119122-6287-4620-98b4-bf86535e2ece' does not have authorization to perform action 'Microsoft.ServiceNetworking/register/action' over scope '/subscriptions/XXXXX' or the scope is invalid. (As part of App Gw for containers - maanged by ALB controller setup)"
+data "azurerm_subscription" "current" {
+}
+
+resource "azurerm_role_assignment" "appgwcontainer" {
+  principal_id         = azurerm_user_assigned_identity.alb_identity.principal_id
+  scope                = data.azurerm_subscription.current.subscription_id
+  role_definition_name = "Network Contributor"
+  depends_on = [
+    azurerm_kubernetes_cluster.k8s,
+    azurerm_user_assigned_identity.alb_identity
+  ]
+}
