@@ -12,9 +12,9 @@ Ensure to replace `devopsthehardwayazurecr` with your ACR name and `v1` with the
 
 ## Tag The Docker image
 1. Tag the Docker image
-`docker tag thomasthorntoncloud devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1`
+`docker tag uberapp devopsthehardwayazurecr.azurecr.io/uberapp:v1`
 
 ## Push The Docker Image To ACR
 1. Push the Docker image to ACR
-`docker push devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1`
+`docker push devopsthehardwayazurecr.azurecr.io/uberapp:v1`
 

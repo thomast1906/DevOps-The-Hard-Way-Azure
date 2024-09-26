@@ -4,9 +4,9 @@ Once the AKS cluster is provisioned and the Kubernetes manifest is prepared, it'
 
 1. `cd` into the `kubernetes_manifest` directory
 2. Run the following commands:
-- Install ALB Controller (YModify values if necessary: [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/kubernetes_manifest/scripts/1-install-alb-controller.sh#L3-8) ):
+- Install ALB Controller (YModify values if necessary: [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/4-kubernetes_manifest/scripts/1-install-alb-controller.sh#L3-8) ):
 `./scripts/1-install-alb-controller.sh`
-- Install Gateway API resources (Modify values if necessary: [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/kubernetes_manifest/scripts/2-gateway-api-resources.sh#L1-3) ):
+- Install Gateway API resources (Modify values if necessary: [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/4-kubernetes_manifest/scripts/2-gateway-api-resources.sh#L1-3) ):
 `./scripts/2-install-gateway-api.sh`
 - Deploy the Uber app:
 `kubectl create -f deployment.yml`
@@ -19,9 +19,13 @@ You'll see an output that specifies the service and deployment was created.
 
 4. Access uber-ui via Azure Application Gateway Controller for Containers
 
-`fqdn=$(kubectl get gateway gateway-01 -n alb-devopsthehardway -o jsonpath='{.status.addresses[0].value}')
+`fqdn=$(kubectl get gateway gateway-01 -n uber-ui -o jsonpath='{.status.addresses[0].value}')
 echo "http://$fqdn"
 `
 
 Access the uber-ui using the address mentioned above, example: 
 `http://bye7fxhjesf7enf7.fz32.alb.azure.com`
+
+
+
+ kubectl exec -it uber-ui-6d7d66c5b4-v4zvc -n uber-ui -- curl -o /dev/null -s -w "%{http_code}\n" http://localhost:5000

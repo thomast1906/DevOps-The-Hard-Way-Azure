@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: thomasthorntoncloud
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thomasthornton
+  namespace: thomasthorntoncloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thomasthorntoncloud
+  template:
+    metadata:
+      labels:
+        app: thomasthorntoncloud
+    spec:
+      containers:
+      - name: thomasthorntoncloud
+        image: devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1  # Update this line
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: thomasthorntoncloud
+  namespace: thomasthorntoncloud
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: thomasthorntoncloud

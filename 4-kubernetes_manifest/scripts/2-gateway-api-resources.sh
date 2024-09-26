@@ -10,7 +10,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: gateway-01
-  namespace: alb-devopsthehardway
+  namespace: thomasthorntoncloud
   annotations:
     alb.networking.azure.io/alb-id: $RESOURCE_ID
 spec:
@@ -32,13 +32,13 @@ kubectl apply -f - <<EOF
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: traffic-uberui
-  namespace: uber-ui
+  name: traffic-thomasthorntoncloud
+  namespace: thomasthorntoncloud
 spec:
   parentRefs:
   - name: gateway-01
   rules:
   - backendRefs:
-    - name: uber-ui
-      port: 5000
+    - name: thomasthorntoncloud
+      port: 80
 EOF

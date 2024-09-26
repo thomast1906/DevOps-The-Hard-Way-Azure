@@ -15,10 +15,10 @@ In this lab you will create a Docker image to containerize the Uber app.
    - The app will run as soon as the container gets created and comes up
 
 4. To create the Docker image, you'll run the following command:
-`docker build -t thomasthorntoncloud .`
+`docker build -t uberapp .`
 
 Please note, you want to run the below docker command instead, if the above does not work:
-`docker build --platform=linux/amd64 -t thomasthorntoncloud .` 
+`docker build --platform=linux/amd64 -t uberapp .` 
 
 This command is similar to the first one, but it includes the `--platform` option. The` --platform` option allows you to specify the target platform for the Docker image. In this case, it specifies the platform as `linux/amd64`, which means the image will be built for the AMD64 architecture running Linux. This option is useful when building multi-platform images that can run on different architectures.
 
@@ -32,7 +32,7 @@ The `-t` is for the tag (the name) of the Docker image and the `.` is telling th
 Now that the Docker image is created, you can run the container locally just to confirm it'll work and not crash.
 
 1. To run the Docker container, run the following command:
-`docker run -tid thomasthorntoncloud`
+`docker run -tid uberapp`
 
 - `t` enables a TTY console.
 - `i` enables an interactive session.

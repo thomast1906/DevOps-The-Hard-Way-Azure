@@ -1,12 +1,2 @@
-Flask
-Jinja2
-MarkupSafe
-Werkzeug
-gnureadline
-itsdangerous
-rauth
-requests
-urllib3
-
-gunicorn
-Flask-SSLify
+Flask==2.0.1
+Werkzeug==2.0.1
