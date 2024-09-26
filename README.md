@@ -98,7 +98,7 @@ By following this tutorial, you'll not only deploy an example app on Azure but a
 
 Let's embark on this journey to transform your organisation into a lean, agile, and competitive force in the digital landscape. Happy deploying! 🚀🔧
 
-- By completing this tutorial, you'll:
+By completing this tutorial, you'll:
 - Deploy a real-world app on Azure
 - Master essential DevOps tools and practices
 - Transform your organisation's IT landscape
