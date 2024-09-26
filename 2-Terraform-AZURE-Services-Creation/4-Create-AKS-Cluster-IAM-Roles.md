@@ -1,6 +1,6 @@
 # Create An AKS Cluster and IAM Roles
 
-Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/4-aks/terraform.tfvars) file are accurate for your environment. You may need to customise these values to match your specific configuration.
 
 In this lab you will create:
 - The AKS cluster

@@ -1,21 +1,3 @@
-terraform {
-  required_version = ">= 1.5.7"
-  backend "azurerm" {
-    resource_group_name  = "devopshardway-rg"
-    storage_account_name = "devopshardwaysa"
-    container_name       = "tfstate"
-    key                  = "vnet-terraform.tfstate"
-  }
-}
-
-provider "azurerm" {
-  features {}
-}
-
-data "azurerm_resource_group" "resource_group" {
-  name = "${var.name}-rg"
-}
-
 resource "azurerm_virtual_network" "virtual_network" {
   name                = "${var.name}-vnet"
   location            = var.location

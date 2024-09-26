@@ -1,12 +1,12 @@
 # Create an Azure Container Registry Repository
 
-Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/1-acr/terraform.tfvars) file are accurate for your environment. You may need to customise these values to match your specific configuration and ensure are unique.
 
 In this lab you will create a repository to store the Docker image that you created for the Uber app.
 
 ## Create the ACR Terraform Configuration
 
-1. You can find the Terraform configuration for Azure Container Registry (ACR) [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/ACR). The Terraform configuration files are used to create a repository in Azure Container Registry (ACR). 
+1. You can find the Terraform configuration for Azure Container Registry (ACR) [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/1-acr). The Terraform configuration files are used to create a repository in Azure Container Registry (ACR). 
 
 The Terraform `acr.tf` will:
 - Use a Terraform backend to store the `.tfstate` in an Azure Storage Account

@@ -2,8 +2,7 @@
 
 Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
 
-In this lab, you'll learn how to create an AKS cluster using GitHub Actions. The code can be found [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/AKS)
-
+In this lab, you'll learn how to create an AKS cluster using GitHub Actions. The code can be found [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/4-aks)
 
 ## Secrets
 Prior to running the pipeline, you'll need to set up authentication from GitHub to Azure. To do that, you'll setup an Azure Service Principal.
@@ -18,7 +17,7 @@ You'll need both the clientID of the service principal and secret that was creat
 
 Please Note: The Service Principal needs IAM permission to the subscription/resource group to where the Azure resources are deployed. In this example, I gave **contributor** access to the **subscription**. See examples on how to [assign an Azure Role here](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-steps)
 
-You'll be adding 4 screts into the GitHub repository. These four secrets will allow you to connect to Azure from GitHub Actions.
+You'll be adding 4 secrets into the GitHub repository. These four secrets will allow you to connect to Azure from GitHub Actions.
 
 1. In the code repository, go to Settings --> Secrets
 2. Add in four secrets:

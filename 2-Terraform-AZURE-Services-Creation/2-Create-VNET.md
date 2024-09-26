@@ -1,6 +1,6 @@
 # Create an Azure VNET
 
-Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/2-vnet/terraform.tfvars) file are accurate for your environment. You may need to customise these values to match your specific configuration.
 
 In this lab you will:
 - Create a Virtual Network (VNET) that will be used to deploy your AKS instance into
@@ -9,7 +9,7 @@ In this lab you will:
 
 ## Create the Azure VNET Terraform Configuration
 
-1. You can find the Terraform configuration for Azure Virtual Network [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/VNET). The Terraform configuration files are used to create an Azure Vitual Network. 
+1. You can find the Terraform configuration for Azure Virtual Network [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/2-vnet). The Terraform configuration files are used to create an Azure Vitual Network. 
 
 The Terraform `vnet.tf` will:
 - Use a Terraform backend to store the `.tfstate` in an Azure Storage Account

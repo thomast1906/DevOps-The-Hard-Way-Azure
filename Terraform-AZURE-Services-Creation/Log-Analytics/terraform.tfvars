@@ -1,2 +1,0 @@
-name     = "devopsthehardway"
-location = "uksouth"

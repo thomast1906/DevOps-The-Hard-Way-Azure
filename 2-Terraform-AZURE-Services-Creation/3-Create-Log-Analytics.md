@@ -1,12 +1,12 @@
 # Create an Azure Log Analytics Workspace
 
-Before proceeding, ensure that the values in the terraform.tfvars file are accurate for your environment. You may need to customize these values to match your specific configuration.
+Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics/terraform.tfvars) file are accurate for your environment. You may need to customize these values to match your specific configuration.
 
 In this lab you will create a Log Analytics workspace that will be used to view container insights of your AKS Cluster
 
 ## Create the Log Analytics Workspace Terraform Configuration
 
-1. You can find the Terraform configuration for Log Analytics [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/Log-Analytics). The Terraform configuration files are used to create the Log Analytiocs workspace. 
+1. You can find the Terraform configuration for Log Analytics [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics). The Terraform configuration files are used to create the Log Analytiocs workspace. 
 
 The Terraform `la.tf` will:
 - Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
