@@ -13,7 +13,7 @@ You're brought in to the company and team to make things more modern so the orga
 ## DevOps Solution
 The solution is to deploy the Uber API for the sign-up page. Currently this solution is sitting on a bunch of baremetal, but it's time to sprinkle a little DevOps on it. Although we won't be coding the application itself, we'll cover the deployment process using DevOps tools and methodologies.
 
-![](images/uber.png)
+![](images/website.png)
 
 As a DevOps Engineer, you're more or less (most likely) not writing the app, but instead, deploying it. That's why you're not writing your own app in this tutorial.
 
