@@ -20,7 +20,7 @@ Imagine this: You've just joined a company stuck in the past. They're drowning i
 - [ ] Outdated IT practices
 
 > **Your mission, should you choose to accept it:**  
-> Modernize everything. Make the organisation not just succeed, but lead the pack.
+> Modernise everything. Make the organisation not just succeed, but lead the pack.
 
 ## 💡 The DevOps Solution
 
@@ -40,7 +40,7 @@ Get ready to utilise a range of cutting-edge technologies and platforms to estab
 | GitHub | Code repository |
 | Python | Application and automation |
 | Terraform | Infrastructure as Code |
-| Docker | Containerization |
+| Docker | Containerisation |
 | Kubernetes (AKS) | Container orchestration |
 | GitHub Actions | CI/CD |
 | Checkov | Automated testing |
@@ -87,7 +87,7 @@ After each section, test your understanding:
 
 ```markdown
 - [ ] Can you explain why we're using a remote state for Terraform?
-- [ ] What's the significance of containerizing the app?
+- [ ] What's the significance of containerising the app?
 - [ ] How does AKS simplify Kubernetes management?
 - [ ] Why is automated testing crucial in a DevOps pipeline?
 - [ ] How does CI/CD improve the deployment process?
@@ -96,7 +96,7 @@ After each section, test your understanding:
 ## Conclusion
 By following this tutorial, you'll not only deploy an example app on Azure but also gain valuable insights into modern DevOps practices and tools. 
 
-Let's embark on this journey to transform your organization into a lean, agile, and competitive force in the digital landscape. Happy deploying! 🚀🔧
+Let's embark on this journey to transform your organisation into a lean, agile, and competitive force in the digital landscape. Happy deploying! 🚀🔧
 
 - By completing this tutorial, you'll:
 - Deploy a real-world app on Azure
