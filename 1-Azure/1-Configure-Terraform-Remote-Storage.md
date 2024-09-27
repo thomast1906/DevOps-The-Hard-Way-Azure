@@ -48,7 +48,8 @@ To ensure everything was set up correctly:
 3. Verify the presence of the Storage Account.
 4. Within the Storage Account, check for the Blob container.
 5. It should look similar to this:
-![](images/storage-account.png)
+
+![Storage Account](images/storage-account.png)
 
 ## 💡 Pro Tip
 Consider setting up access policies and encryption for your storage account to enhance security. Azure provides several options for this, including Azure AD authentication and Azure Key Vault integration.
