@@ -30,7 +30,7 @@ To ensure your manifest is correctly configured:
 2. Verify that the image URL matches your ACR repository
 3. Check that the resource requests and limits are appropriate for your application
 
-### 🧠 Knowledge Check
+## 🧠 Knowledge Check
 After reviewing the manifest, consider these questions:
 1. What is the purpose of each component (Deployment, Service, Namespace) in the manifest?
 2. Why is it important to update the image URL in the manifest?

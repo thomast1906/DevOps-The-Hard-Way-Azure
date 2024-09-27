@@ -12,7 +12,7 @@ In this lab, you'll learn how to create an Azure Kubernetes Service (AKS) cluste
 ### Steps
 
 1. **Review and Customise Variables**
-   - Open the `terraform.tfvars` file in the [AKS Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/4-aks).
+   - Open the `terraform.tfvars` file in the [AKS Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/4-aks).
    - Ensure all values are accurate for your environment.
 
 2. **Set Up Azure Service Principal**

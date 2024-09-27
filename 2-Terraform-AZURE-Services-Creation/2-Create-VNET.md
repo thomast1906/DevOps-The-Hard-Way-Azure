@@ -11,11 +11,11 @@ In this lab, you'll set up the networking infrastructure for your AKS deployment
 ### Steps
 
 1. **Review and Change Terraform .tfvars**
-   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/2-vnet/terraform.tfvars) file.
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/2-vnet/terraform.tfvars) file.
    - Ensure all values are accurate for your environment.
 
 2. **Understand the Terraform Configuration**
-   Review the [VNET Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/2-vnet). The configuration includes:
+   Review the [VNET Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/2-vnet). The configuration includes:
 
    **vnet.tf:**
    - [ ] Uses a Terraform backend to store the `.tfstate` in Azure Storage
