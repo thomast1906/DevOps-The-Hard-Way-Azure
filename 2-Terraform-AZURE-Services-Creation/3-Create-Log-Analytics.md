@@ -11,11 +11,11 @@ In this lab, you'll create a Log Analytics workspace to view container insights 
 ### Steps
 
 1. **Review and Change Terraform .tfvars**
-   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/3-log-analytics/terraform.tfvars) file.
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/3-log-analytics/terraform.tfvars) file.
    - Ensure all values are accurate for your environment.
 
 2. **Understand the Terraform Configuration**
-   Review the [Log Analytics Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/3-log-analytics). The `la.tf` file will:
+   Review the [Log Analytics Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/3-log-analytics). The `la.tf` file will:
    - [ ] Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
    - [ ] Create a Log Analytics workspace using `azurerm_log_analytics_workspace`
    - [ ] Enable the ContainerInsights solution using `azurerm_log_analytics_solution`
