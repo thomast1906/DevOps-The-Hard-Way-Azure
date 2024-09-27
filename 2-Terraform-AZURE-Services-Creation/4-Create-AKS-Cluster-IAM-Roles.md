@@ -40,10 +40,7 @@ In this lab, you'll create an Azure Kubernetes Service (AKS) cluster and set up 
    terraform init
    terraform plan
    terraform apply
-
-
-
-
+   ```
 
 ## 🧠 Knowledge Check
 
