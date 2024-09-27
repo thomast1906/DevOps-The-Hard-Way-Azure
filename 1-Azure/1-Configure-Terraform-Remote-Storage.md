@@ -1,5 +1,6 @@
 # Configure Storage Account for Terraform State File
 
+## 🎯 Purpose
 In this lab, you'll create a secure location to store the remote Terraform State file. This is crucial for maintaining consistency and collaboration in your infrastructure-as-code projects.
 
 ## 🛠️ Create Blob Storage for Terraform State File

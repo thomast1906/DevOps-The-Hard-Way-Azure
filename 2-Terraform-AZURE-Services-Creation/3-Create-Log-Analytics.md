@@ -1,20 +1,50 @@
 # Create an Azure Log Analytics Workspace
 
-Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics/terraform.tfvars) file are accurate for your environment. You may need to customize these values to match your specific configuration.
+## 🎯 Purpose
+In this lab, you'll create a Log Analytics workspace to view container insights of your AKS Cluster.
 
-In this lab you will create a Log Analytics workspace that will be used to view container insights of your AKS Cluster
+## 🛠️ Create the Log Analytics Workspace Terraform Configuration
 
-## Create the Log Analytics Workspace Terraform Configuration
+### Prerequisites
+- [ ] Basic understanding of Azure Log Analytics
 
-1. You can find the Terraform configuration for Log Analytics [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics). The Terraform configuration files are used to create the Log Analytiocs workspace. 
+### Steps
 
-The Terraform `la.tf` will:
-- Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
-- Use the `azurerm_log_analytics_workspace` Terraform resource to create a Log Analytics workspace. 
-- Use the `azurerm_log_analytics_solution` Terraform resource to enable the Log Analytics solution ContainerInsights. 
-- Use the `uksouth` region, but feel free to change that if you'd like
+1. **Review and Change Terraform .tfvars**
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics/terraform.tfvars) file.
+   - Ensure all values are accurate for your environment.
 
-2. Create the Log Analytics Workspace by running the following:
-- `terraform init` - To initialize the working directory and pull down the provider
-- `terraform plan` - To go through a "check" and confirm the configurations are valid
-- `terraform apply` - To create the resource
+2. **Understand the Terraform Configuration**
+   Review the [Log Analytics Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/3-log-analytics). The `la.tf` file will:
+   - [ ] Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
+   - [ ] Create a Log Analytics workspace using `azurerm_log_analytics_workspace`
+   - [ ] Enable the ContainerInsights solution using `azurerm_log_analytics_solution`
+   - [ ] Use the `uksouth` region (can change if desired)
+
+3. **Create the Log Analytics Workspace**
+   Run the following commands in your terminal:
+   ```bash
+   terraform init
+   terraform plan
+   terraform apply
+
+## 🧠 Knowledge Check
+
+After creating the Log Analytics workspace, consider these questions:
+1. Why is Log Analytics important for managing AKS clusters?
+2. How does the ContainerInsights solution enhance your ability to monitor AKS?
+3. What types of insights can you gain from Log Analytics in an AKS context?
+
+## 🔍 Verification
+To ensure the resources were created successfully:
+1. Log into the [Azure Portal](https://portal.azure.com)
+2. Navigate to the Resource Group
+3. Verify the presence of the Log Analytics workspace and ContainerInsights solution:
+
+Example screenshot of created resources:
+
+![](images/la.png)
+
+## 💡 Pro Tip
+
+Consider setting up [custom dashboards](https://azure.microsoft.com/en-gb/free/search/?ef_id=_k_Cj0KCQjwr9m3BhDHARIsANut04aW1Bkx-AcJ5QGbPg_zxVIQw_txn1OWbyl-KpP1uzi0WxsLeZHjZDEaAmGcEALw_wcB_k_&OCID=AIDcmm3bvqzxp1_SEM__k_Cj0KCQjwr9m3BhDHARIsANut04aW1Bkx-AcJ5QGbPg_zxVIQw_txn1OWbyl-KpP1uzi0WxsLeZHjZDEaAmGcEALw_wcB_k_&gad_source=1&gclid=Cj0KCQjwr9m3BhDHARIsANut04aW1Bkx-AcJ5QGbPg_zxVIQw_txn1OWbyl-KpP1uzi0WxsLeZHjZDEaAmGcEALw_wcB) in Azure Portal using the data collected by Log Analytics to get quick insights into your AKS cluster's performance and health.

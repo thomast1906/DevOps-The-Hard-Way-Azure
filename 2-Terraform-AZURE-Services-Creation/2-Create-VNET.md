@@ -1,33 +1,64 @@
 # Create an Azure VNET
 
-Before proceeding, ensure that the values in the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/2-vnet/terraform.tfvars) file are accurate for your environment. You may need to customise these values to match your specific configuration.
+## 🎯 Purpose
+In this lab, you'll set up the networking infrastructure for your AKS deployment, including a Virtual Network (VNET), Network Security Group (NSG), and Azure Application Gateway for Containers.
 
-In this lab you will:
-- Create a Virtual Network (VNET) that will be used to deploy your AKS instance into
-- Create a Network Security Group (NSG) and assign to the relevant subnets
-- Create an Azure Application Gateway for Containers and associate it with the VNET
+## 🛠️ Create the Azure VNET Terraform Configuration
 
-## Create the Azure VNET Terraform Configuration
+### Prerequisites
+- [ ] Basic understanding of Azure networking concepts
 
-1. You can find the Terraform configuration for Azure Virtual Network [here](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/2-vnet). The Terraform configuration files are used to create an Azure Vitual Network. 
+### Steps
 
-The Terraform `vnet.tf` will:
-- Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
-- Use the `azurerm_virtual_network` Terraform resource to create a VNET. 
-- Use the `azurerm_subnet` Terraform resource to create relevant subnets. 
-- Use the `uksouth` region, but feel free to change that if you'd like
+1. **Review and Change Terraform .tfvars**
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/Terraform-AZURE-Services-Creation/2-vnet/terraform.tfvars) file.
+   - Ensure all values are accurate for your environment.
 
-The Terraform `nsg.tf` will:
-- Use the `azurerm_network_security_group` Terraform resource to create a NSG.
-- Use the `azurerm_subnet_network_security_group_association` Terraform resource to associate the NSG to the relevant subnets.
+2. **Understand the Terraform Configuration**
+   Review the [VNET Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/2-vnet). The configuration includes:
 
-The Terraform `alb.tf` will:
-- Use the `azurerm_application_load_balancer` Terraform resource to create an Azure Application Gateway for Containers.
-- Use the `azurerm_application_load_balancer_subnet_association` Terraform resource to associate the Azure Application Gateway with the VNET.
-- Use the `azurerm_application_load_balancer_frontend` Terraform resource to create a frontend for the Azure Application Gateway.
+   **vnet.tf:**
+   - [ ] Uses a Terraform backend to store the `.tfstate` in Azure Storage
+   - [ ] Creates a VNET using `azurerm_virtual_network`
+   - [ ] Creates subnets using `azurerm_subnet`
+   - [ ] Uses the `uksouth` region (can change if desired)
+
+   **nsg.tf:**
+   - [ ] Creates a NSG using `azurerm_network_security_group`
+   - [ ] Associates NSG to subnets using `azurerm_subnet_network_security_group_association`
+
+   **alb.tf:**
+   - [ ] Creates an Azure Application Gateway for Containers using `azurerm_application_load_balancer`
+   - [ ] Associates the Gateway with VNET using `azurerm_application_load_balancer_subnet_association`
+   - [ ] Creates a frontend for the Gateway using `azurerm_application_load_balancer_frontend`
+
+3. **Create the Resources**
+   Run the following commands in your terminal:
+   ```bash
+   terraform init
+   terraform plan
+   terraform apply
 
 
-2. Create the VNET, NSG & Azure Application Gateway for Containers by running the following:
-- `terraform init` - To initialize the working directory and pull down the provider
-- `terraform plan` - To go through a "check" and confirm the configurations are valid
-- `terraform apply` - To create the resource
+## 🧠 Knowledge Check
+
+After creating the resources, consider these questions:
+1. Why is it important to plan your VNET and subnet structure before deployment?
+2. How does the NSG enhance the security of your AKS deployment?
+3. What benefits does the Azure Application Gateway for Containers provide?
+
+## 🔍 Verification
+
+To ensure the resources were created successfully:
+1. Log into the [Azure Portal](https://portal.azure.com)
+2. Navigate to the Resource Group
+3. Verify the presence of the VNET, NSG, and Application Gateway for Containers:
+
+Example screenshot of created resources:
+
+![](images/vnet.png)
+
+
+## 💡 Pro Tip
+
+Consider using [Azure Network Watcher](https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview) to visualise and diagnose your network topology and connectivity issues.
