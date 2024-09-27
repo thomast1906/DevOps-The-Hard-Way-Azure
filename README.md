@@ -58,10 +58,10 @@ Before you start, ensure you have the following [prerequisites](https://github.c
 ### Main Sections
 
 1. **Terraform** - Create all the Azure cloud services needed to run the thomasthorntoncloud application.
-    - [ ] [Create Azure Container Registry (ACR)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-AZURE-Services-Creation/1-Create-ACR.md)
-    - [ ] [Create Azure Virtual Network (VNET)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-AZURE-Services-Creation/2-Create-VNET.md)
-    - [ ] [Create Log Analytics](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-AZURE-Services-Creation/3-Create-Log-Analytics.md)
-    - [ ] [Create AKS Cluster with relevant IAM roles](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-AZURE-Services-Creation/4-Create-AKS-Cluster-IAM-Roles.md)
+    - [ ] [Create Azure Container Registry (ACR)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/1-Create-ACR.md)
+    - [ ] [Create Azure Virtual Network (VNET)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/2-Create-VNET.md)
+    - [ ] [Create Log Analytics](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/3-Create-Log-Analytics.md)
+    - [ ] [Create AKS Cluster with relevant IAM roles](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/4-Create-AKS-Cluster-IAM-Roles.md)
 
 2. **Docker** - Containerise the thomasthorntoncloud application and store it in Azure Container Registry (ACR).
     - [ ] [Create the Docker Image](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/1-Create-Docker-Image.md)
