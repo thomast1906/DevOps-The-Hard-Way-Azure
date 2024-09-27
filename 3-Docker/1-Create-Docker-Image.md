@@ -1,7 +1,7 @@
-# Creating the Docker Image for the Thomasthorntoncloud App
+# Creating the Docker Image for the Thomasthornton.cloud App
 
 ## 🎯 Purpose
-In this lab, you'll create a Docker image to containerise the Thomasthorntoncloud app and run it locally.
+In this lab, you'll create a Docker image to containerise the Thomasthornton.cloud app and run it locally.
 
 ## 🛠️ Create The Docker Image
 

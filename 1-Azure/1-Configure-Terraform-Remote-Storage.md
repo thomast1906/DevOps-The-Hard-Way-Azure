@@ -12,7 +12,7 @@ In this lab, you'll create a secure location to store the remote Terraform State
 ### Steps
 
 1. **Customise Variables**
-   - Open the [create-terraform-storage.sh](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/1-Azure/scripts/create-terraform-storage.sh) script.
+   - Open the [create-terraform-storage.sh](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/1-Azure/scripts/create-terraform-storage.sh) script.
    - Locate the following lines:
    
      ```bash

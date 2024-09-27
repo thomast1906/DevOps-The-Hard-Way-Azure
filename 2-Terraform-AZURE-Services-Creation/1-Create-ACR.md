@@ -1,7 +1,7 @@
 # Create an Azure Container Registry Repository
 
 ## 🎯 Purpose
-In this lab, you'll create a repository in Azure Container Registry (ACR) to store the Docker image for the thomasthorntoncloud app.
+In this lab, you'll create a repository in Azure Container Registry (ACR) to store the Docker image for the thomasthornton.cloud app.
 
 ## 🛠️ Create the ACR Terraform Configuration
 
@@ -12,11 +12,11 @@ In this lab, you'll create a repository in Azure Container Registry (ACR) to sto
 ## Steps
 
 1. **Review and Change Terraform .tfvars**
-   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/1-acr/terraform.tfvars) file.
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/1-acr/terraform.tfvars) file.
    - Ensure all values are accurate for your environment and unique.
 
 2. **Understand the Terraform Configuration**
-   Review the [ACR Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/1-acr). The `acr.tf` file will:
+   Review the [ACR Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/1-acr). The `acr.tf` file will:
    - [ ] Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
    - [ ] Use the `uksouth` region (can change if desired)
    - [ ] Create a new Resource Group using `azurerm_resource_group`

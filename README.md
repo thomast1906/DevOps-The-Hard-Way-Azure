@@ -51,35 +51,35 @@ Get ready to utilise a range of cutting-edge technologies and platforms to estab
 
 ### Prerequisites
 
-Before you start, ensure you have the following [prerequisites](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/prerequisites.md) in place
-1. [ ] [Create a Storage Account for Terraform State file](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/1-Azure/1-Configure-Terraform-Remote-Storage.md)
-2. [ ] [Set up an Azure AD Group for AKS Admins](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/1-Azure/2-Create-Azure-AD-Group-AKS-Admins.md)
+Before you start, ensure you have the following [prerequisites](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/prerequisites.md) in place
+1. [ ] [Create a Storage Account for Terraform State file](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/1-Azure/1-Configure-Terraform-Remote-Storage.md)
+2. [ ] [Set up an Azure AD Group for AKS Admins](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/1-Azure/2-Create-Azure-AD-Group-AKS-Admins.md)
 
 ### Main Sections
 
-1. **Terraform** - Create all the Azure cloud services needed to run the thomasthorntoncloud application.
-    - [ ] [Create Azure Container Registry (ACR)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/1-Create-ACR.md)
-    - [ ] [Create Azure Virtual Network (VNET)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/2-Create-VNET.md)
-    - [ ] [Create Log Analytics](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/3-Create-Log-Analytics.md)
-    - [ ] [Create AKS Cluster with relevant IAM roles](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/4-Create-AKS-Cluster-IAM-Roles.md)
+1. **Terraform** - Create all the Azure cloud services needed to run the thomasthornton.cloud application.
+    - [ ] [Create Azure Container Registry (ACR)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/1-Create-ACR.md)
+    - [ ] [Create Azure Virtual Network (VNET)](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/2-Create-VNET.md)
+    - [ ] [Create Log Analytics](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/3-Create-Log-Analytics.md)
+    - [ ] [Create AKS Cluster with relevant IAM roles](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/4-Create-AKS-Cluster-IAM-Roles.md)
 
-2. **Docker** - Containerise the thomasthorntoncloud application and store it in Azure Container Registry (ACR).
-    - [ ] [Create the Docker Image](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/1-Create-Docker-Image.md)
-    - [ ] [Create a Docker Image for the thomasthorntoncloud App](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/2-Push%20Image%20To%20ACR.md)
+2. **Docker** - Containerise the thomasthornton.cloud application and store it in Azure Container Registry (ACR).
+    - [ ] [Create the Docker Image](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/3-Docker/1-Create-Docker-Image.md)
+    - [ ] [Create a Docker Image for the thomasthornton.cloud App](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/3-Docker/2-Push%20Image%20To%20ACR.md)
 
 
-3. **Kubernetes** - Deploy application to AKS and expose the thomasthorntoncloud application to the internet.
-    - [ ] [Connect To AKS From The Terminal](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/1-Connect-To-AKS.md)
-    - [ ] [Create A Kubernetes Manifest](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/2-Create-Kubernetes-Manifest.md)
-    - [ ] [Deploy thomasthorntoncloud App into Kubernetes](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/3-Deploy-Thomasthorntoncloud-App.md)
+3. **Kubernetes** - Deploy application to AKS and expose the thomasthornton.cloud application to the internet.
+    - [ ] [Connect To AKS From The Terminal](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/4-kubernetes_manifest/1-Connect-To-AKS.md)
+    - [ ] [Create A Kubernetes Manifest](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/4-kubernetes_manifest/2-Create-Kubernetes-Manifest.md)
+    - [ ] [Deploy thomasthornton.cloud App into Kubernetes](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/4-kubernetes_manifest/3-Deploy-Thomasthorntoncloud-App.md)
 
 
 4. **Automated Testing** Ensure code quality
-    - [ ] [Install And Run Checkov](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/5-Terraform-Static-Code-Analysis/1-Checkov-For-Terraform.md)
+    - [ ] [Install And Run Checkov](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/5-Terraform-Static-Code-Analysis/1-Checkov-For-Terraform.md)
 
 
 5. **CICD** - Automatically update AKS cluster with CICD using GitHub Actions
-    - [ ] [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
+    - [ ] [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
 
 ## 🎓 Learning Checkpoints
 

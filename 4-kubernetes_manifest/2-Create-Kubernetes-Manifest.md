@@ -1,7 +1,7 @@
 # Create The Kubernetes Manifest
 
 ## 🎯 Purpose
-In this lab, you'll create and understand the Kubernetes manifest for deploying the Thomasthorntoncloud app to Azure Kubernetes Service (AKS).
+In this lab, you'll create and understand the Kubernetes manifest for deploying the Thomasthornton.cloud app to Azure Kubernetes Service (AKS).
 
 ## 🛠️ Create and Configure the Kubernetes Manifest
 

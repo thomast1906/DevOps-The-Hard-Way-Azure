@@ -36,7 +36,7 @@ In this lab, you'll deploy the Thomasthorntoncloud app to your Azure Kubernetes 
     ```bash
     kubectl get deployments
     ```
-4. **Access the Thomasthorntoncloud App**
+4. **Access the Thomasthornton.cloud App**
 
 To access the Thomasthorntoncloud app via Azure Application Gateway Controller for Containers, run the following command:
     ```bash
@@ -44,9 +44,9 @@ To access the Thomasthorntoncloud app via Azure Application Gateway Controller f
     echo "http://$fqdn"
     ```
 
-    Access the Thomasthorntoncloud app using the address provided.
+    Access the Thomasthornton.cloud app using the address provided.
 
-You've successfully deployed the Thomasthorntoncloud app to your AKS cluster using the Kubernetes manifest:
+You've successfully deployed the Thomasthornton.cloud app to your AKS cluster using the Kubernetes manifest:
 
 ![](images/website.png)
 
