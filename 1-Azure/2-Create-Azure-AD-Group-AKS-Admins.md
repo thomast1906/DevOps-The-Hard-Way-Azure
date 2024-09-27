@@ -37,7 +37,9 @@ To ensure the group was created successfully:
 1. Log into the [Azure Portal](https://portal.azure.com)
 2. Navigate to **Azure Active Directory > Groups**
 3. Search for `devopsthehardway-aks-group`
-4. Verify that your user account is listed as a member
+4. Verify that your user account is listed as a member:
+
+![](images/azure-ad-group.png)
 
 ### 💡 Pro Tip
 Consider setting up multiple AD groups with different levels of access (e.g., read-only, developer, admin) to implement a more granular access control strategy for your AKS clusters.
