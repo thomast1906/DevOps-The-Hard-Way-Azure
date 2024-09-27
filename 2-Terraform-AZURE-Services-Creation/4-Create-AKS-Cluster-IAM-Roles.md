@@ -12,11 +12,11 @@ In this lab, you'll create an Azure Kubernetes Service (AKS) cluster and set up 
 ### Steps 
 
 1. **Review and Change Terraform .tfvars**
-   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/4-aks/terraform.tfvars) file.
+   - Open the [terraform.tfvars](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/4-aks/terraform.tfvars) file.
    - Ensure all values are accurate for your environment.
 
 2. **Understand the Terraform Configuration**
-   Review the [AKS Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/Terraform-AZURE-Services-Creation/4-aks). The configuration includes:
+   Review the [AKS Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/updates-sept-2024/2-Terraform-AZURE-Services-Creation/4-aks). The configuration includes:
 
    **aks.tf:**
    - [ ] Creates AKS Cluster using `azurerm_kubernetes_cluster`
