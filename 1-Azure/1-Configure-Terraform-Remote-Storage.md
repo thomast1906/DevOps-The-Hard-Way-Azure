@@ -13,9 +13,10 @@ In this lab, you'll create a secure location to store the remote Terraform State
 1. **Customise Variables**
    - Open the [create-terraform-storage.sh](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/1-Azure/scripts/create-terraform-storage.sh) script.
    - Locate the following lines:
+   
      ```bash
-    RESOURCE_GROUP_NAME="devopshardway-rg"
-    STORAGE_ACCOUNT_NAME="devopshardwaysa"
+      RESOURCE_GROUP_NAME="devopshardway-rg"
+      STORAGE_ACCOUNT_NAME="devopshardwaysa"
      ```
 
    - Replace the placeholders with your desired names.
@@ -49,7 +50,7 @@ To ensure everything was set up correctly:
 4. Within the Storage Account, check for the Blob container.
 5. It should look similar to this:
 
-![Storage Account](images/storage-account.png)
+![](images/storage-account.png)
 
 ## 💡 Pro Tip
 Consider setting up access policies and encryption for your storage account to enhance security. Azure provides several options for this, including Azure AD authentication and Azure Key Vault integration.
