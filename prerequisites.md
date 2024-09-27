@@ -33,7 +33,7 @@ Because code will be written for *DevOps The Hard Way*, you will need a code edi
 
 ### Terraform
 
-[Terraform Download](https://www.terraform.io/downloads.html) - Tested on version 1.7.4
+[Terraform Download](https://www.terraform.io/downloads.html) - This  on version 1.9.6
 
 ### Docker
 To build the Docker image, you can use Docker Desktop for Windows or MacOS. 

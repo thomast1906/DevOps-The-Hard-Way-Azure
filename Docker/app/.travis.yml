@@ -1,7 +1,0 @@
-language: python
-install: make bootstrap
-script: make
-branches:
-  except:
-    - /^v[0-9]/
-after_success: coveralls

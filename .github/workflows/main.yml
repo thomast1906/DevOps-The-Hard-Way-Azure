@@ -1,4 +1,4 @@
-name: CI
+name: Terrform-Deploy
 
 on:
   push:
@@ -10,14 +10,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  terraform-fmt-check:
-    if: github.event_name == 'pull_request'
+  terraform:
+    name: Terrform-Deploy
+    runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "./Terraform-AZURE-Services-Creation/AKS"
-    name: Terraform
-    environment: production
-    runs-on: ubuntu-latest
+        working-directory: "./2-Terraform-AZURE-Services-Creation/4-aks"
     permissions:
       contents: write
     env:
@@ -29,6 +27,7 @@ jobs:
       tf_storage_account_name: "thomasthorntontfstate"
       tf_state_container: "devopsthehardwaygithub"
       tf_state_key: "terraform.tfstate"
+
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
@@ -36,51 +35,30 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: 1.7.4
+        terraform_version: 1.9.6
         terraform_wrapper: true
 
-    - name: Terraform Init
-      id: init
-      run: terraform init
-      env:
-        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
-      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
 
-    - name: Terraform Fmt
-      id: fmt
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      if: github.event_name == 'pull_request'
       run: terraform fmt
-      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
 
     - name: Auto Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v5
+      if: github.event_name == 'pull_request'
       with:
         commit_message: "Terraform fmt"
         file_pattern: "*.tf *.tfvars"
         commit_user_name: "github-actions[bot]"
 
-    - name: Terraform Plan  
-      id: plan
+    - name: Terraform Plan
       run: terraform plan -no-color -input=false
       env:
-        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
         DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
-      continue-on-error: false
 
-    - name: Terraform Apply  
-      id: apply
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
       run: terraform apply -auto-approve -input=false
-      if: github.ref == 'refs/heads/main'
-      env:
-        ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-        ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-        ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
-      working-directory: "./Terraform-AZURE-Services-Creation/AKS"
-      continue-on-error: false
