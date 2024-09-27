@@ -65,21 +65,21 @@ Before you start, ensure you have the following [prerequisites](https://github.c
 
 2. **Docker** - Containerise the thomasthorntoncloud application and store it in Azure Container Registry (ACR).
     - [ ] [Create the Docker Image](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/1-Create-Docker-Image.md)
-    - [ ] [Create a Docker Image for the thomasthorntoncloud App](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/Push%20Image%20To%20ACR.md)
+    - [ ] [Create a Docker Image for the thomasthorntoncloud App](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/3-Docker/2-Push%20Image%20To%20ACR.md)
 
 
 3. **Kubernetes** - Deploy application to AKS and expose the thomasthorntoncloud application to the internet.
-    - [ ] [Connect To AKS From The Terminal](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/1-Connect-To-ACR.md)
+    - [ ] [Connect To AKS From The Terminal](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/1-Connect-To-AKS.md)
     - [ ] [Create A Kubernetes Manifest](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/2-Create-Kubernetes-Manifest.md)
-    - [ ] [Deploy thomasthorntoncloud App into Kubernetes](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/3-Deploy-Uber-App.md)
+    - [ ] [Deploy thomasthorntoncloud App into Kubernetes](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/4-kubernetes_manifest/3-Deploy-Thomasthorntoncloud-App.md)
 
 
 4. **Automated Testing** Ensure code quality
-    - [ ] [Install And Run Checkov](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-Static-Code-Analysis/1-Checkov-For-Terraform.md)
+    - [ ] [Install And Run Checkov](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/5-Terraform-Static-Code-Analysis/1-Checkov-For-Terraform.md)
 
 
 5. **CICD** - Automatically update AKS cluster with CICD using GitHub Actions
-    - [ ] [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
+    - [ ] [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/updates-sept-2024/2-Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
 
 ## 🎓 Learning Checkpoints
 
