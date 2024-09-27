@@ -1,44 +1,85 @@
-# Creating the Docker image for the Uber app
+# Creating the Docker Image for the Thomasthorntoncloud App
 
-In this lab you will create a Docker image to containerize the Uber app.
+## 🎯 Purpose
+In this lab, you'll create a Docker image to containerise the Thomasthorntoncloud app and run it locally.
 
-## Create The Docker Image
+## 🛠️ Create The Docker Image
 
-1. `cd` into the *Docker* directory where you will see a *Dockerfile* and *app* directory. The app directory is what stores the Python application and the Dockerfile will be used to build the app.
+### Prerequisites
+- [ ] Docker installed and running
+- [ ] Basic understanding of Docker concepts
 
-2. Open the Dockerfile
+### Steps
 
-3. Within the Dockerfile, you'll see a few key components
-   - The Docker image that's being used is Python. It's using the latest version
-   - There's a new directory being created called `/build`, which is where the Python app will reside
-   - The *app* directory will be copied into the `/build` directory, along with the `requirements.txt` file to install all of the Python requirements for the app
-   - The app will run as soon as the container gets created and comes up
+1. **Navigate to the Docker Directory**
 
-4. To create the Docker image, you'll run the following command:
-`docker build -t thomasthorntoncloud .`
+     ```bash
+     cd Docker
+     ```
 
-Please note, you want to run the below docker command instead, if the above does not work:
-`docker build --platform=linux/amd64 -t thomasthorntoncloud .` 
+You should see a `Dockerfile` and an `app` directory
 
-This command is similar to the first one, but it includes the `--platform` option. The` --platform` option allows you to specify the target platform for the Docker image. In this case, it specifies the platform as `linux/amd64`, which means the image will be built for the AMD64 architecture running Linux. This option is useful when building multi-platform images that can run on different architectures.
+2. Review the Dockerfile
 
-The `-t` is for the tag (the name) of the Docker image and the `.` is telling the Docker CLI that the Dockerfile is in the current directory
+Open the Dockerfile and note its key components:
+- [ ] Uses the latest Python image as base
+- [ ] Creates a `/build` directory for the app
+- [ ] Copies the `app` directory and `requirements.txt` into `/build`
+- [ ] Configures the container to run the app on startup
 
-5. After the Docker image is created, run the following command to confirm the Docker image is on your machine.
-`docker image ls`
+3. Build the Docker Image
+Run one of the following commands:
 
-## Run The Docker Image Locally
+     ```bash
+     docker build -t thomasthorntoncloud .
+     ```
+Or, if the above doesn't work:
 
-Now that the Docker image is created, you can run the container locally just to confirm it'll work and not crash.
+     ```bash
+     docker build --platform=linux/amd64 -t thomasthorntoncloud .
+     ```
 
-1. To run the Docker container, run the following command:
-`docker run -tid thomasthorntoncloud`
+> 🔍 **Note**: The --platform option specifies the target platform as linux/amd64, useful for multi-platform images.
 
+4. Verify the Docker Image
+
+     ```bash
+     docker image ls
+     ```
+
+## 🏃‍♂️ Run The Docker Image Locally
+
+1. **Run the Docker Container**
+
+     ```bash
+     docker run -tid thomasthorntoncloud
+     ```
 - `t` enables a TTY console.
 - `i` enables an interactive session.
 - `d` detaches the terminal from the Docker container.
 
-2. Confirm that the Docker container is running by running the following command:
-`docker container ls`
+2. **Confirm the Container is Running**
 
-You should now see the container running successfully.
+     ```bash
+     docker container ls
+     ```
+
+You should see the container running successfully.
+
+## 🧠 Knowledge Check
+
+After creating and running the Docker image, consider these questions:
+1. Why do we use the `-t` flag when building the Docker image?
+2. What's the purpose of the `--platform` option in the build command?
+3. How does running the container with `-tid` flags differ from running it without these flags?
+
+## 🔍 Verification
+
+To ensure the Docker image was created and is running successfully:
+1. Check that the image appears in the output of `docker image ls`
+2. Verify that the container is listed and in the "Up" state when you run `docker container ls`
+
+
+## 💡 Pro Tip
+
+Consider using Docker Compose for more complex applications with multiple services. It simplifies the process of running multi-container Docker applications.

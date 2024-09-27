@@ -1,20 +1,53 @@
-# Push Image To ACR
+# Push Image To Azure Container Registry (ACR)
 
-The ACR repo will be where you store the Docker image that you created on your local computer in step 1.
+## 🎯 Purpose
+In this lab, you'll push the Docker image you created locally to Azure Container Registry (ACR).
 
-Ensure to replace `devopsthehardwayazurecr` with your ACR name and `v1` with the appropriate version tag if needed.
+## 🛠️ Push Docker Image to ACR
 
+### Prerequisites
+- [ ] Docker image created locally
+- [ ] Access to an Azure Container Registry
 
-## Log Into The ECR Repository
-1. Log in to ACR with Azure CLI
-`az acr login --name devopsthehardwayazurecr`
+### Steps
 
+1. **Log Into the ACR Repository**
 
-## Tag The Docker image
-1. Tag the Docker image
-`docker tag thomasthorntoncloud devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1`
+> 🔍 **Note**: Replace `devopsthehardwayazurecr` with your actual ACR name.
 
-## Push The Docker Image To ACR
-1. Push the Docker image to ACR
-`docker push devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1`
+   ```bash
+   az acr login --name devopsthehardwayazurecr
+   ```
 
+2. **Tag the Docker Image**
+
+> 🔍 **Note**: Ensure to replace` devopsthehardwayazurecr` with your ACR name and `v1` with the appropriate version tag if needed.
+
+   ```bash
+   docker tag thomasthorntoncloud devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1
+   ```
+3. **Push the Docker Image to ACR**
+
+   ```bash
+   docker push devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1
+   ```
+
+## 🧠 Knowledge Check
+
+After pushing the image to ACR, consider these questions:
+1. Why do we need to tag the Docker image before pushing it to ACR?
+2. What's the significance of the version tag (e.g., `v1`) in the image name?
+3. How does ACR authentication work when pushing images?
+
+## 🔍 Verification
+
+To ensure the Docker image was successfully pushed to ACR:
+1. Log into the [Azure Portal](https://portal.azure.com).
+2. Navigate to your Azure Container Registry
+3. Check the "Repositories" section to see if your image is listed:
+
+![](images/acr.png)
+
+## 💡 Pro Tip
+
+Consider setting up CI/CD pipelines to automatically build and push your Docker images to ACR whenever you make changes to your application code.
