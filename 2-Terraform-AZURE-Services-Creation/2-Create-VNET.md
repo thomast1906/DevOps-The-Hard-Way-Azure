@@ -39,14 +39,6 @@ In this lab, you'll set up the networking infrastructure for your AKS deployment
    terraform plan
    terraform apply
 
-
-## 🧠 Knowledge Check
-
-After creating the resources, consider these questions:
-1. Why is it important to plan your VNET and subnet structure before deployment?
-2. How does the NSG enhance the security of your AKS deployment?
-3. What benefits does the Azure Application Gateway for Containers provide?
-
 ## 🔍 Verification
 
 To ensure the resources were created successfully:
@@ -58,6 +50,13 @@ Example screenshot of created resources:
 
 ![](images/vnet.png)
 
+
+## 🧠 Knowledge Check
+
+After creating the resources, consider these questions:
+1. Why is it important to plan your VNET and subnet structure before deployment?
+2. How does the NSG enhance the security of your AKS deployment?
+3. What benefits does the Azure Application Gateway for Containers provide?
 
 ## 💡 Pro Tip
 

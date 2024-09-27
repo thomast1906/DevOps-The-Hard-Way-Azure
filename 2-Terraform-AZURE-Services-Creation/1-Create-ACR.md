@@ -29,13 +29,6 @@ In this lab, you'll create a repository in Azure Container Registry (ACR) to sto
    terraform plan
    terraform apply
 
-## 🧠 Knowledge Check
-After creating the ACR, consider these questions:
-
-1. Why is it beneficial to use Terraform for creating cloud resources like ACR?
-2. How does storing the Terraform state in Azure Storage Account help in team environments?
-3. What are the advantages of using ACR over other container registry options?
-
 ## 🔍 Verification
 To ensure the ACR was created successfully:
 1. Log into the [Azure Portal](https://portal.azure.com)
@@ -46,6 +39,13 @@ To ensure the ACR was created successfully:
 Example screenshot of the Terraform apply command:
 
 ![](images/acr.png)
+
+## 🧠 Knowledge Check
+After creating the ACR, consider these questions:
+
+1. Why is it beneficial to use Terraform for creating cloud resources like ACR?
+2. How does storing the Terraform state in Azure Storage Account help in team environments?
+3. What are the advantages of using ACR over other container registry options?
 
 ## 💡 Pro Tip
 Consider setting up replication for your ACR to improve pull performance in different regions. You can add this to your Terraform configuration for automated setup.

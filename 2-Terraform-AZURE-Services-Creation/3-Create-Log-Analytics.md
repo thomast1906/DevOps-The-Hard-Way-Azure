@@ -27,13 +27,7 @@ In this lab, you'll create a Log Analytics workspace to view container insights 
    terraform init
    terraform plan
    terraform apply
-
-## 🧠 Knowledge Check
-
-After creating the Log Analytics workspace, consider these questions:
-1. Why is Log Analytics important for managing AKS clusters?
-2. How does the ContainerInsights solution enhance your ability to monitor AKS?
-3. What types of insights can you gain from Log Analytics in an AKS context?
+   ```
 
 ## 🔍 Verification
 To ensure the resources were created successfully:
@@ -44,6 +38,13 @@ To ensure the resources were created successfully:
 Example screenshot of created resources:
 
 ![](images/la.png)
+
+## 🧠 Knowledge Check
+
+After creating the Log Analytics workspace, consider these questions:
+1. Why is Log Analytics important for managing AKS clusters?
+2. How does the ContainerInsights solution enhance your ability to monitor AKS?
+3. What types of insights can you gain from Log Analytics in an AKS context?
 
 ## 💡 Pro Tip
 

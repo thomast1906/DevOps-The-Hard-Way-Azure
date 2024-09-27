@@ -37,7 +37,14 @@ In this lab, you'll learn how to create an Azure Kubernetes Service (AKS) cluste
    - Select the existing `CI` workflow.
    - Choose to run the workflow from the main branch.
 
-### 🧠 Understanding the Workflow
+## 🔍 Verification
+After running the workflow:
+1. Check the GitHub Actions logs for successful completion.
+2. Log into the [Azure Portal](https://portal.azure.com)
+3. Navigate to Kubernetes services
+4. Verify that your new AKS cluster has been updated or created.
+
+### 🧠 Knowledge Check
 The GitHub Actions workflow:
 - [ ] Triggers manually (`workflow_dispatch`) or on pull requests/pushes to main
 - [ ] Checks out the code
@@ -47,13 +54,6 @@ The GitHub Actions workflow:
 - [ ] Initialises Terraform
 - [ ] Plans the Terraform changes
 - [ ] Applies the Terraform configuration to create the AKS cluster
-
-## 🔍 Verification
-After running the workflow:
-1. Check the GitHub Actions logs for successful completion.
-2. Log into the [Azure Portal](https://portal.azure.com)
-3. Navigate to Kubernetes services
-4. Verify that your new AKS cluster has been updated or created.
 
 ## 💡 Pro Tip
 Consider using separate state files for different environments (dev, staging, production) to manage multiple AKS clusters and environments efficiently

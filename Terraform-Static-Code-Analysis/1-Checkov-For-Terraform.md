@@ -1,20 +1,63 @@
+
 # Checkov For Terraform
 
-Just like any other piece of code, you should be testing Infrastructure-as-Code. There are a few ways to test Terraform code, but one of the leaders is Checkov by Bridgecrew (which has just been bought by Palo Alto).
+## 🎯 Purpose
+In this lab, you'll learn how to use Checkov, a leading open-source static/security analysis tool, to test and secure your Terraform code.
 
-Checkov is an open-source static/security analysis tool that you can use to set up policies (Policy-as-Code) for Terraform code and many other configuration languages.
+## 🛠️ Install and Run Checkov
 
-## Install Checkov
+### Prerequisites
+- [ ] Python installed
+- [ ] Basic understanding of Terraform
+- [ ] Terraform code to scan
 
-1. Ensure you have Python installed
-2. Run the following command:
-`pip install checkov`
-OR
-`pip3 install checkov`
-3. Run `checkov` on a terminal and you'll see a prompt that will set you up with the free Bridgecrew UI, which is where you can view the results of the Terraform scan. Press `Y` to start the process.
-4. Run a scan to the Terraform code. For this process, you can scan all of the Terraform code in the `Terraform-AZURE-Services-Creation` directory.
+### Steps
 
-An example of this would be:
-`checkov --directory DevOps-The-Hard-Way-Azure/Terraform-AZURE-Services-Creation/1-acr`
+1. **Install Checkov**
+   Run one of the following commands:
+   ```bash
+   pip install checkov
+   ```
 
-You'll then see what tests have passed, what tests have failed, and what you can do to remediate the issues. You can either view the results on the terminal or from the UI.
+    OR
+    
+    ```bash
+    pip3 install checkov
+    ```
+
+2. **Run Checkov**
+    Run the following command in your terminal:
+    ```bash
+    checkov
+    ```
+    You'll see a prompt to set up the free Bridgecrew UI. Press `Y` to start the process.
+
+3. **Scan Terraform Code**
+
+    Run the following command to scan the Terraform code:
+    ```bash
+    checkov --directory <path_to_terraform_code>
+    ```
+
+    For example:
+    ```bash
+    checkov --directory DevOps-The-Hard-Way-Azure/Terraform-AZURE-Services-Creation/1-acr
+    ```
+
+## 🔍 Verification
+
+To ensure Checkov is working correctly:
+1. Check that the scan completes without errors
+2. Review the list of passed and failed tests in the terminal output
+3. Verify that you can access the results in the Bridgecrew UI
+
+## 🧠 Knowledge Check
+
+After running Checkov, consider these questions:
+1. What types of issues does Checkov identify in Terraform code?
+2. How does Checkov differ from other Terraform validation tools?
+3. What are the benefits of using the Bridgecrew UI alongside Checkov?
+
+## 💡 Pro Tip
+
+Use Checkov's `--compact flag` to get a more concise output, or `--quiet` to only see failed checks. This can be helpful when integrating with CI/CD pipelines.

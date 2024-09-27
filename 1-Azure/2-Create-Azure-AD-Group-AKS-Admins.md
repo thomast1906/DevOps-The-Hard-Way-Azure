@@ -26,12 +26,6 @@ In this lab, you'll create an Azure AD Group for AKS Admins. These "admins" will
 **Important Note**
 Make sure to note down the Azure AD Group ID displayed at the end of the script execution. You'll need this for AKS Terraform configurations later.
 
-## 🧠 Knowledge Check
-After running the script, consider these questions:
-1. Why is it beneficial to use Azure AD groups for AKS admin access?
-2. How does this group-based access improve security compared to individual user access?
-3. In what ways might you further modify the AD group for different levels of access?
-
 ## 🔍 Verification
 To ensure the group was created successfully:
 1. Log into the [Azure Portal](https://portal.azure.com)
@@ -40,6 +34,12 @@ To ensure the group was created successfully:
 4. Verify that your user account is listed as a member:
 
 ![](images/azure-ad-group.png)
+
+## 🧠 Knowledge Check
+After running the script, consider these questions:
+1. Why is it beneficial to use Azure AD groups for AKS admin access?
+2. How does this group-based access improve security compared to individual user access?
+3. In what ways might you further modify the AD group for different levels of access?
 
 ## 💡 Pro Tip
 Consider setting up multiple AD groups with different levels of access (e.g., read-only, developer, admin) to implement a more granular access control strategy for your AKS clusters.

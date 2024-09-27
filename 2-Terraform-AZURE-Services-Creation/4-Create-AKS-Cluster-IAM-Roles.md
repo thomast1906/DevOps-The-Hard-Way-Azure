@@ -42,13 +42,6 @@ In this lab, you'll create an Azure Kubernetes Service (AKS) cluster and set up 
    terraform apply
    ```
 
-## 🧠 Knowledge Check
-
-After creating the AKS cluster and IAM roles, consider these questions:
-1. Why is it important to use managed identities with AKS?
-2. How does RBAC enhance the security of your AKS cluster?
-3. What are the benefits of using federated identity credentials?
-
 ## 🔍 Verification
 
 To ensure the resources were created successfully:
@@ -61,6 +54,13 @@ To ensure the resources were created successfully:
 Example screenshot of created resources:
 
 ![](images/aks.png)
+
+## 🧠 Knowledge Check
+
+After creating the AKS cluster and IAM roles, consider these questions:
+1. Why is it important to use managed identities with AKS?
+2. How does RBAC enhance the security of your AKS cluster?
+3. What are the benefits of using federated identity credentials?
 
 ## 💡 Pro Tip
 
