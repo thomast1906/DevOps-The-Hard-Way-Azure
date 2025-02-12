@@ -14,7 +14,7 @@ In this lab, you'll deploy the Thomasthorntoncloud app to your Azure Kubernetes 
 
 1. **Navigate to the Kubernetes Manifest Directory**
    ```bash
-   cd kubernetes_manifest
+   cd 4-kubernetes_manifest
     ```
 2. Deploy the Application Components
 
@@ -25,11 +25,11 @@ In this lab, you'll deploy the Thomasthorntoncloud app to your Azure Kubernetes 
 
 - Install ALB Controller:
     ```bash
-    ./scripts/1-install-alb-controller.sh
+    ./scripts/1-alb-controller-install-k8s.sh
     ```
 - Install Gateway API resources:
     ```bash
-    ./scripts/2-install-gateway-api.sh
+    ./scripts/2-gateway-api-resources.sh
     ```
 
 3. **Verify Deployment**
