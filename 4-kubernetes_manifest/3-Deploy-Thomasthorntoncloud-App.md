@@ -18,6 +18,11 @@ In this lab, you'll deploy the Thomasthorntoncloud app to your Azure Kubernetes 
     ```
 2. Deploy the Application Components
 
+- Deploy the Thomasthorntoncloud app:
+    ```bash
+    kubectl create -f deployment.yml
+    ```
+
 - Install ALB Controller:
     ```bash
     ./scripts/1-install-alb-controller.sh
@@ -25,10 +30,6 @@ In this lab, you'll deploy the Thomasthorntoncloud app to your Azure Kubernetes 
 - Install Gateway API resources:
     ```bash
     ./scripts/2-install-gateway-api.sh
-    ```
-- Deploy the Thomasthorntoncloud app:
-    ```bash
-    kubectl create -f deployment.yml
     ```
 
 3. **Verify Deployment**
