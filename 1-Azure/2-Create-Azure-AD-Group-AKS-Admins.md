@@ -6,7 +6,8 @@ In this lab, you'll create an Azure AD Group for AKS Admins. These "admins" will
 ## 🛠️ Create Azure AD AKS Admin Group
 
 ### Prerequisites
-- [ ] Sufficient permissions to create Azure AD groups
+- [ ] Azure CLI installed and configured (`az login` executed)
+- [ ] Sufficient permissions to create Azure AD groups (e.g., Global Administrator or User Administrator role)
 
 
 ### Steps
@@ -19,12 +20,12 @@ In this lab, you'll create an Azure AD Group for AKS Admins. These "admins" will
 2. What the Script Does
 
     The script performs these actions:
-    - [ ] Creates an Azure AD Group named `devopsthehardway-aks-group`
+    - [ ] Creates an Azure AD Group named `devopsthehardway-aks-group` with a descriptive purpose
     - [ ] Adds the current user (logged into Az CLI) to the `devopsthehardway-aks-group`
-    - [ ] Outputs the Azure AD Group ID
+    - [ ] Outputs the Azure AD Group ID in a clear, formatted way for later use
 
 **Important Note**
-Make sure to note down the Azure AD Group ID displayed at the end of the script execution. You'll need this for AKS Terraform configurations later.
+Make sure to save the Azure AD Group ID displayed at the end of the script execution. You'll need this for AKS Terraform configurations in the following sections.
 
 ## 🔍 Verification
 To ensure the group was created successfully:
@@ -42,4 +43,17 @@ After running the script, consider these questions:
 3. In what ways might you further modify the AD group for different levels of access?
 
 ## 💡 Pro Tip
-Consider setting up multiple AD groups with different levels of access (e.g., read-only, developer, admin) to implement a more granular access control strategy for your AKS clusters.
+Consider implementing these best practices for production environments:
+1. Create multiple AD groups with different levels of access (e.g., read-only, developer, admin)
+2. Integrate with Privileged Identity Management (PIM) for just-in-time access
+3. Implement regular access reviews to ensure appropriate access
+4. Use Conditional Access policies to enforce multi-factor authentication
+
+Example of adding another user to the group:
+```bash
+# Get object ID of user to add
+USER_OBJECTID=$(az ad user show --id user@example.com --query id -o tsv)
+
+# Add user to the AKS admin group
+az ad group member add --group devopsthehardway-aks-group --member-id $USER_OBJECTID
+```
