@@ -53,7 +53,7 @@ To ensure the resources were created successfully:
 
 Example screenshot of created resources:
 
-![](images/aks.png)
+![](images/4-aks.png)
 
 ## 🧠 Knowledge Check
 

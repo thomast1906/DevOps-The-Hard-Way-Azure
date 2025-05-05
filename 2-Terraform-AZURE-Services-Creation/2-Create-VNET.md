@@ -48,7 +48,7 @@ To ensure the resources were created successfully:
 
 Example screenshot of created resources:
 
-![](images/vnet.png)
+![](images/2-vnet.png)
 
 
 ## 🧠 Knowledge Check

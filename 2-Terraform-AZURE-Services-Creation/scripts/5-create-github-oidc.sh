@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Configuration
-APP_DISPLAY_NAME="DevOps-The-Hardway-Azure"
+APP_DISPLAY_NAME="DevOps-The-Hardway-Azure-GitHub-OIDC"
 GITHUB_REPO="thomast1906/DevOps-The-Hard-Way-Azure"
 
 # Error handling function

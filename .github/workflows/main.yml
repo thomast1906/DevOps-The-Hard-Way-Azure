@@ -18,6 +18,8 @@ jobs:
         working-directory: "./2-Terraform-AZURE-Services-Creation/4-aks"
     permissions:
       contents: write
+      id-token: write  # Required for OIDC
+      
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}

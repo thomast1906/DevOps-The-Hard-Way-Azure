@@ -16,15 +16,13 @@ In this lab, you'll learn how to create an Azure Kubernetes Service (AKS) cluste
    - Ensure all values are accurate for your environment.
 
 2. **Set Up GitHub OIDC Authentication with Azure**
+
    Set up a more secure authentication method using GitHub OIDC (OpenID Connect) with Azure:
-   
-   - First, customise the script variables if needed:
-     ```bash
-     # Open the script
-     nano ./scripts/5-create-github-oidc.sh
-     
+
+   - First, customise the [script](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/scripts/5-create-github-oidc.sh) variables if needed:
+     ```bash     
      # Variables you may want to customise:
-     APP_DISPLAY_NAME="DevOps-The-Hardway-Azure"  # Name of the Azure AD app registration
+     APP_DISPLAY_NAME="DevOps-The-Hardway-Azure-GitHub-OIDC"  # Name of the Azure AD app registration
      GITHUB_REPO="thomast1906/DevOps-The-Hard-Way-Azure"  # Your GitHub repository name
      ```
      Update these variables to match your specific environment if different from the defaults.
@@ -47,11 +45,11 @@ In this lab, you'll learn how to create an Azure Kubernetes Service (AKS) cluste
    **Note**: After running the script, it will output all the necessary information and next steps. You'll need to assign appropriate IAM permissions (e.g., Contributor access to the subscription) to the Service Principal using:
    ```bash
    # Store the app ID in a variable
-   APP_ID=$(az ad app list --display-name "DevOps-The-Hardway-Azure" --query [].appId -o tsv)
+   APP_ID=$(az ad app list --display-name "DevOps-The-Hardway-Azure-GitHub-OIDC" --query "[].appId" -o tsv)
    
    # Get the service principal ID
-   SP_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --query [].id -o tsv)
-   
+   SP_ID=$(az ad sp list --filter "appId eq '$APP_ID'" --query "[].id" -o tsv)
+
    # Assign Contributor role to the subscription
    az role assignment create --assignee $SP_ID --role "Contributor" --scope "/subscriptions/YOUR_SUBSCRIPTION_ID"
    ```
@@ -67,13 +65,6 @@ In this lab, you'll learn how to create an Azure Kubernetes Service (AKS) cluste
      - `AZURE_SUBSCRIPTION_ID`: Your Azure subscription ID
    
    Note: All three values will be automatically displayed in the output of the `5-create-github-oidc.sh` script, so you can copy them directly from there.
-   
-   - Set up appropriate permissions in your workflow YAML:
-     ```yaml
-     permissions:
-       id-token: write  # Required for OIDC
-       contents: read
-     ```
 
 4. **Set Up GitHub Actions Workflow**
    - Navigate to the Actions tab in your GitHub repository.

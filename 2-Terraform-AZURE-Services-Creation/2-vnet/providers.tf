@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.9.6"
+  required_version = ">= 1.11"
   backend "azurerm" {
     resource_group_name  = "devopshardway-rg"
     storage_account_name = "devopshardwaysa"
@@ -10,7 +10,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">= 4.3.0"
+      version = ">= 4.27.0"
     }
   }
 }
