@@ -22,13 +22,14 @@ jobs:
       
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      ARM_USE_OIDC: true
       tf_resource_group_name: "thomasthorntoncloud"
       tf_storage_account_name: "thomasthorntontfstate"
       tf_state_container: "devopsthehardwaygithub"
       tf_state_key: "terraform.tfstate"
+
 
     steps:
     - name: Checkout Code
@@ -37,7 +38,7 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: 1.9.6
+        terraform_version: 1.11.0
         terraform_wrapper: true
 
 
