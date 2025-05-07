@@ -13,9 +13,6 @@ jobs:
   terraform:
     name: Terrform-Deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./2-Terraform-AZURE-Services-Creation/4-aks"
     permissions:
       contents: write
       id-token: write  # Required for OIDC
@@ -41,16 +38,6 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
-    - name: List directories for debugging
-      run: |
-        pwd
-        # ls -l
-        # # ls -l ./2-Terraform-AZURE-Services-Creation/1-resource_groups
-        # # ls -l ./2-Terraform-AZURE-Services-Creation/2-container_registry
-        # # ls -l ./2-Terraform-AZURE-Services-Creation/3-key_vault
-        # ls -l ./2-Terraform-AZURE-Services-Creation/4-aks
-
-
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
@@ -61,10 +48,12 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
 
     - name: Terraform Format
       if: github.event_name == 'pull_request'
       run: terraform fmt
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
 
     - name: Auto Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v5
@@ -76,9 +65,11 @@ jobs:
 
     - name: Terraform Plan
       run: terraform plan -no-color -input=false
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
       env:
         DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
       run: terraform apply -auto-approve -input=false
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
