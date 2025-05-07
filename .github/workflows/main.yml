@@ -41,6 +41,13 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
+    - name: Render terraform docs and push changes back to PR
+      uses: terraform-docs/gh-actions@main
+      with:
+        working-dir: .
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
 
     - name: Terraform Init
       run: terraform init
