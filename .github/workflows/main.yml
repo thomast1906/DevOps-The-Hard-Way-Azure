@@ -41,6 +41,15 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
+    - name: List directories for debugging
+      run: |
+        ls -l 2-Terraform-AZURE-Services-Creation
+        ls -l 2-Terraform-AZURE-Services-Creation/1-resource_groups
+        ls -l 2-Terraform-AZURE-Services-Creation/2-container_registry
+        ls -l 2-Terraform-AZURE-Services-Creation/3-key_vault
+        ls -l 2-Terraform-AZURE-Services-Creation/4-aks
+        
+
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
