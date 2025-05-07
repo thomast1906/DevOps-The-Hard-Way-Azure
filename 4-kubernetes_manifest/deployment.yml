@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: thomasthorntoncloud
-        image: devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v2  # Update this line
+        image: devopsthehardwayazurecr.azurecr.io/thomasthorntoncloud:v1  # Update this line
         ports:
         - containerPort: 5000
         resources:
