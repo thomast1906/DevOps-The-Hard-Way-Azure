@@ -43,11 +43,12 @@ jobs:
 
     - name: List directories for debugging
       run: |
-        ls -l
-        # ls -l ./2-Terraform-AZURE-Services-Creation/1-resource_groups
-        # ls -l ./2-Terraform-AZURE-Services-Creation/2-container_registry
-        # ls -l ./2-Terraform-AZURE-Services-Creation/3-key_vault
-        ls -l ./2-Terraform-AZURE-Services-Creation/4-aks
+        pwd
+        # ls -l
+        # # ls -l ./2-Terraform-AZURE-Services-Creation/1-resource_groups
+        # # ls -l ./2-Terraform-AZURE-Services-Creation/2-container_registry
+        # # ls -l ./2-Terraform-AZURE-Services-Creation/3-key_vault
+        # ls -l ./2-Terraform-AZURE-Services-Creation/4-aks
 
 
     - name: Render terraform docs and push changes back to PR
