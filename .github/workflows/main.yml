@@ -38,10 +38,13 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
+    # ls
+    - name: List Files
+      run: pwd
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
-        working-dir: ./2-Terraform-AZURE-Services-Creation/1-resource_groups,./2-Terraform-AZURE-Services-Creation/2-container_registry,./2-Terraform-AZURE-Services-Creation/3-key_vault,./2-Terraform-AZURE-Services-Creation/4-aks
+        working-dir: 2-Terraform-AZURE-Services-Creation/1-resource_groups,2-Terraform-AZURE-Services-Creation/2-container_registry,2-Terraform-AZURE-Services-Creation/3-key_vault,2-Terraform-AZURE-Services-Creation/4-aks
         output-file: README.md
         output-method: inject
         git-push: "true"
