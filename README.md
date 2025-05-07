@@ -111,3 +111,29 @@ By completing this tutorial, you'll:
 Are you ready to embark on this DevOps journey? Let's turn that monolithic infrastructure into a lean, mean, deploying machine! 💪🚀 📣 
 
 I value your feedback! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+No requirements.
+
+## Providers
+
+No providers.
+
+## Modules
+
+No modules.
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
