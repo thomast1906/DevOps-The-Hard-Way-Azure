@@ -1,30 +1,3 @@
-# Terraform Azure Services Creation
-
-This directory contains Terraform configurations for creating various Azure services used in the DevOps The Hard Way tutorial.
-
-## Modules
-
-1. **Resource Groups** - Creates the base resource groups for all resources
-2. **Container Registry** - Sets up Azure Container Registry for storing Docker images
-3. **Key Vault** - Configures Azure Key Vault for secret management
-4. **AKS** - Deploys Azure Kubernetes Service cluster
-
-Each subdirectory contains the specific Terraform configuration for that service. Documentation for each module is automatically generated using terraform-docs.
-
-## Structure
-
-- Each module follows a standard structure with variables, outputs, and main configuration
-- Configuration is designed to be composed together to create the complete infrastructure
-- Remote state is used to share information between modules
-
-## How to Use
-
-1. Navigate to each directory in sequence
-2. Initialize Terraform: `terraform init`
-3. Apply the configuration: `terraform apply`
-
-Or use the GitHub Actions workflow to automate deployment.
-
 # Terraform Azure Services Creation for DevOps The Hard Way
 
 ## Overview
