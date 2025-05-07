@@ -38,9 +38,6 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
-    # ls
-    - name: List Files
-      run: pwd
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
