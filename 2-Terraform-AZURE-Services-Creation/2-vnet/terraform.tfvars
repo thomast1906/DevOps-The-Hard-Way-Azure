@@ -7,7 +7,8 @@ subnet_address_name       = "appgw"
 subnet_address_prefix     = "192.168.1.0/24"
 
 tags = {
+  "Purpose"     = "azure-devops-hardway"
+  "Environment" = "DevOps"
   "DeployedBy"  = "Terraform"
-  "Environment" = "production"
   "Project"     = "devopsthehardway"
 }

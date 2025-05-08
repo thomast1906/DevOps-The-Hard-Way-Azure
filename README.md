@@ -44,6 +44,7 @@ Get ready to utilise a range of cutting-edge technologies and platforms to estab
 | Kubernetes (AKS) | Container orchestration |
 | GitHub Actions | CI/CD |
 | Checkov | Automated testing |
+| Terraform-docs | Documentation automation |
 
 ## 🧪 Labs
 
@@ -81,6 +82,9 @@ Before you start, ensure you have the following [prerequisites](https://github.c
 5. **CICD** - Automatically update AKS cluster with CICD using GitHub Actions
     - [ ] [Create a GitHub Actions CICD pipeline](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/2-Terraform-AZURE-Services-Creation/5-Run-CICD-For-AKS-Cluster.md)
 
+6. **Terraform Documentation** - Automate Terraform documentation generation
+    - [ ] [Set Up Terraform-docs with GitHub Actions](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/blob/main/6-Terraform-Docs/1-Setup-Terraform-Docs.md)
+
 ## 🎓 Learning Checkpoints
 
 After each section, test your understanding:
@@ -91,6 +95,7 @@ After each section, test your understanding:
 - [ ] How does AKS simplify Kubernetes management?
 - [ ] Why is automated testing crucial in a DevOps pipeline?
 - [ ] How does CI/CD improve the deployment process?
+- [ ] Why is automated documentation important for infrastructure as code?
 ```
 
 ## Conclusion

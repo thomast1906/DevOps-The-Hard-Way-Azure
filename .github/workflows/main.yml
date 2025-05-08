@@ -13,20 +13,20 @@ jobs:
   terraform:
     name: Terrform-Deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "./2-Terraform-AZURE-Services-Creation/4-aks"
     permissions:
       contents: write
+      id-token: write  # Required for OIDC
+      
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}
+      ARM_USE_OIDC: true
       tf_resource_group_name: "thomasthorntoncloud"
       tf_storage_account_name: "thomasthorntontfstate"
       tf_state_container: "devopsthehardwaygithub"
       tf_state_key: "terraform.tfstate"
+
 
     steps:
     - name: Checkout Code
@@ -35,16 +35,33 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: 1.9.6
+        terraform_version: 1.11.0
         terraform_wrapper: true
 
+    # Add in tutorial 6-Terarform-Docs
+    # - name: Render terraform docs and push changes back to PR
+    #   uses: terraform-docs/gh-actions@main
+    #   with:
+    #     working-dir: ./2-Terraform-AZURE-Services-Creation/1-acr, ./2-Terraform-AZURE-Services-Creation/2-vnet, ./2-Terraform-AZURE-Services-Creation/3-log-analytics, ./2-Terraform-AZURE-Services-Creation/4-aks
+    #     output-file: README.md
+    #     output-method: inject
+    #     git-push: "true"
 
     - name: Terraform Init
       run: terraform init
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
+    
+    # Add in tutorial 5-Terraform-Static-Code-Analysis
+    # - name: tfsec
+    #   uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+    #   with:
+    #     tfsec_args: --soft-fail
+    #     github_token: ${{ github.token }}
 
     - name: Terraform Format
       if: github.event_name == 'pull_request'
       run: terraform fmt
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
 
     - name: Auto Commit Changes
       uses: stefanzweifel/git-auto-commit-action@v5
@@ -56,9 +73,11 @@ jobs:
 
     - name: Terraform Plan
       run: terraform plan -no-color -input=false
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
       env:
         DEPLOYMENT_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
       run: terraform apply -auto-approve -input=false
+      working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks

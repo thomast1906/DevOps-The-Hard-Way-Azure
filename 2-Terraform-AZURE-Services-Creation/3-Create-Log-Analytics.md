@@ -37,7 +37,7 @@ To ensure the resources were created successfully:
 
 Example screenshot of created resources:
 
-![](images/la.png)
+![](images/3-la.png)
 
 ## 🧠 Knowledge Check
 

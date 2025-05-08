@@ -1,3 +1,4 @@
+
 resource "azurerm_virtual_network" "virtual_network" {
   name                = "${var.name}-vnet"
   location            = var.location
@@ -21,13 +22,13 @@ resource "azurerm_subnet" "app_gwsubnet" {
   virtual_network_name = azurerm_virtual_network.virtual_network.name
   address_prefixes     = [var.subnet_address_prefix]
 
+  # Required delegation for Application Gateway (Service Networking)
   delegation {
     name = "delegation"
 
     service_delegation {
       name    = "Microsoft.ServiceNetworking/trafficControllers"
       actions = ["Microsoft.Network/virtualNetworks/subnets/join/action"]
-
     }
   }
 }

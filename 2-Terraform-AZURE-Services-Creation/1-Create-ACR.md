@@ -7,6 +7,8 @@ In this lab, you'll create a repository in Azure Container Registry (ACR) to sto
 
 ### Prerequisites
 - [ ] Terraform installed
+- [ ] Azure CLI installed and configured
+- [ ] Storage account for Terraform state already created (from 1-Azure section)
 - [ ] Basic understanding of Terraform and ACR concepts
 
 ## Steps
@@ -16,18 +18,21 @@ In this lab, you'll create a repository in Azure Container Registry (ACR) to sto
    - Ensure all values are accurate for your environment and unique.
 
 2. **Understand the Terraform Configuration**
-   Review the [ACR Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/1-acr). The `acr.tf` file will:
+   Review the [ACR Terraform configuration](https://github.com/thomast1906/DevOps-The-Hard-Way-Azure/tree/main/2-Terraform-AZURE-Services-Creation/1-acr). The configuration will:
    - [ ] Use a Terraform backend to store the `.tfstate` in an Azure Storage Account
-   - [ ] Use the `uksouth` region (can change if desired)
+   - [ ] Use the `uksouth` region (can be changed if desired)
    - [ ] Create a new Resource Group using `azurerm_resource_group`
-   - [ ] Create a new ACR using `azurerm_container_registry`
+   - [ ] Create a new ACR using `azurerm_container_registry` with Standard SKU
+   - [ ] Apply consistent tagging for better resource management and organization
 
 3. **Create the ACR**
-   Run the following commands in your terminal:
+   Navigate to the 1-acr directory and run the following commands in your terminal:
    ```bash
+   cd 1-acr
    terraform init
    terraform plan
    terraform apply
+   ```
 
 ## 🔍 Verification
 To ensure the ACR was created successfully:
@@ -36,9 +41,9 @@ To ensure the ACR was created successfully:
 3. Look for your newly created ACR
 4. Verify its properties match your Terraform configuration
 
-Example screenshot of the Terraform apply command:
+Screenshot of the ACR in the Azure Portal:
 
-![](images/acr.png)
+![](images/1-acr.png)
 
 ## 🧠 Knowledge Check
 After creating the ACR, consider these questions:
@@ -48,4 +53,13 @@ After creating the ACR, consider these questions:
 3. What are the advantages of using ACR over other container registry options?
 
 ## 💡 Pro Tip
-Consider setting up replication for your ACR to improve pull performance in different regions. You can add this to your Terraform configuration for automated setup.
+Consider implementing these additional security and operational best practices for your ACR:
+
+1. **Enhanced Security**:
+   - Enable content trust for image signing: `admin_enabled = false` (already set)
+   - Configure private link endpoints to restrict network access
+   - Use Managed Identity for authentication instead of admin credentials
+
+2. **Cost Optimisation**:
+   - Monitor image usage and implement retention policies
+   - Use Premium SKU only if you need geo-replication or other advanced features

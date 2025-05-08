@@ -6,7 +6,8 @@ In this lab, you'll create a secure location to store the remote Terraform State
 ## 🛠️ Create Blob Storage for Terraform State File
 
 ### Prerequisites
-- [ ] Azure CLI installed and configured
+- [ ] Azure CLI installed and configured (`az login` executed)
+- [ ] Contributor permissions on your Azure subscription
 - [ ] Basic understanding of Azure Storage concepts
 
 ### Steps
@@ -27,14 +28,18 @@ In this lab, you'll create a secure location to store the remote Terraform State
    - Run the following command in your terminal:
 
      ```bash
-     ./scripts/create-terraform-storage.sh
+     ./scripts/1-create-terraform-storage.sh
      ```
 
 3. **What's Happening Behind the Scenes?**
    The script performs these actions:
-   - [ ] Creates an Azure Resource Group
-   - [ ] Sets up an Azure Storage Account
+   - [ ] Creates an Azure Resource Group with appropriate tags
+   - [ ] Sets up an Azure Storage Account with enhanced security settings:
+     - Encryption enabled for blob storage
+     - TLS 1.2 enforced
+     - Public access to blobs disabled
    - [ ] Establishes an Azure Blob storage container
+   - [ ] Outputs configuration for your Terraform backend
 
 ## 🔍 Verification
 To ensure everything was set up correctly:
@@ -54,4 +59,17 @@ After running the script, try to answer these questions:
 3. How would you access this state file in your Terraform configurations?
 
 ## 💡 Pro Tip
-Consider setting up access policies and encryption for your storage account to enhance security. Azure provides several options for this, including Azure AD authentication and Azure Key Vault integration.
+Consider implementing these additional security measures for production environments:
+1. Enable soft delete and versioning for your blob storage to protect against accidental deletion
+2. Set up a resource lock to prevent accidental deletion of the storage account
+3. Use Managed Identities instead of storage account keys for authentication
+4. Configure network rules to restrict access to specific networks
+5. Set up Azure Key Vault to store sensitive backend configuration
+
+Example of adding a resource lock:
+```bash
+az lock create --name LockTerraformStorage --lock-type CanNotDelete \
+  --resource-group devopshardway-rg \
+  --resource-name devopshardwaysa \
+  --resource-type Microsoft.Storage/storageAccounts
+```
