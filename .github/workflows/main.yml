@@ -38,23 +38,25 @@ jobs:
         terraform_version: 1.11.0
         terraform_wrapper: true
 
-    - name: Render terraform docs and push changes back to PR
-      uses: terraform-docs/gh-actions@main
-      with:
-        working-dir: ./2-Terraform-AZURE-Services-Creation/1-acr, ./2-Terraform-AZURE-Services-Creation/2-vnet, ./2-Terraform-AZURE-Services-Creation/3-log-analytics, ./2-Terraform-AZURE-Services-Creation/4-aks
-        output-file: README.md
-        output-method: inject
-        git-push: "true"
+    # Add in tutorial 6-Terarform-Docs
+    # - name: Render terraform docs and push changes back to PR
+    #   uses: terraform-docs/gh-actions@main
+    #   with:
+    #     working-dir: ./2-Terraform-AZURE-Services-Creation/1-acr, ./2-Terraform-AZURE-Services-Creation/2-vnet, ./2-Terraform-AZURE-Services-Creation/3-log-analytics, ./2-Terraform-AZURE-Services-Creation/4-aks
+    #     output-file: README.md
+    #     output-method: inject
+    #     git-push: "true"
 
     - name: Terraform Init
       run: terraform init
       working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
-
-    - name: tfsec
-      uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
-      with:
-        tfsec_args: --soft-fail
-        github_token: ${{ github.token }}
+    
+    # Add in tutorial 5-Terraform-Static-Code-Analysis
+    # - name: tfsec
+    #   uses: aquasecurity/tfsec-pr-commenter-action@v1.2.0
+    #   with:
+    #     tfsec_args: --soft-fail
+    #     github_token: ${{ github.token }}
 
     - name: Terraform Format
       if: github.event_name == 'pull_request'
