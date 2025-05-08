@@ -81,3 +81,29 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
       run: terraform apply -auto-approve -input=false
       working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
+
+    - name: Create GitHub Deployment
+      if: github.ref == 'refs/heads/main'
+      id: deployment
+      uses: chrnorm/deployment-action@v2
+      with:
+        token: ${{ github.token }}
+        environment: production
+        description: "Deployment from main branch"
+
+    - name: Update Deployment Status (Success)
+      if: success() && github.ref == 'refs/heads/main'
+      uses: chrnorm/deployment-status@v2
+      with:
+        token: ${{ github.token }}
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+        state: "success"
+        environment-url: https://portal.azure.com/#resource/subscriptions/${{ secrets.AZURE_SUBSCRIPTION_ID }}/resourceGroups/thomasthorntoncloud/providers/Microsoft.ContainerService/managedClusters/devopsthehardwayaks
+
+    - name: Update Deployment Status (Failure)
+      if: failure() && github.ref == 'refs/heads/main'
+      uses: chrnorm/deployment-status@v2
+      with:
+        token: ${{ github.token }}
+        deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+        state: "failure"
