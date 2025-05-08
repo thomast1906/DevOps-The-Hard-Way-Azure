@@ -12,7 +12,6 @@ on:
 jobs:
   terraform:
     name: Terrform-Deploy
-    environment: production
     runs-on: ubuntu-latest
     permissions:
       contents: write
