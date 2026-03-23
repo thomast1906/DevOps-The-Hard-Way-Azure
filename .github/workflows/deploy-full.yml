@@ -61,7 +61,7 @@ jobs:
         version: 'latest'
 
     - name: ⚙️ Setup Helm
-      uses: azure/setup-helm@v4
+      uses: azure/setup-helm@v5
       with:
         version: 'latest'
 
@@ -365,7 +365,7 @@ jobs:
         version: 'latest'
 
     - name: ⚙️ Setup Helm
-      uses: azure/setup-helm@v4
+      uses: azure/setup-helm@v5
       with:
         version: 'latest'
 
