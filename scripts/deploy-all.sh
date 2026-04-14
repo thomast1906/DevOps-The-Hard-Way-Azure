@@ -21,9 +21,10 @@ NC='\033[0m' # No Color
 PROJECT_NAME="${PROJECT_NAME:-devopsthehardway}"
 LOCATION="${LOCATION:-uksouth}"
 RESOURCE_GROUP="${PROJECT_NAME}-rg"
-TF_RG="${PROJECT_NAME}-terraform-rg"
-TF_SA="${PROJECT_NAME}tfstate"
-TF_CONTAINER="tfstate"
+# TF backend names match 1-Azure/scripts/1-create-terraform-storage.sh and providers.tf hardcoded values
+TF_RG="${TF_RG:-devopshardway-rg}"
+TF_SA="${TF_SA:-devopshardwaysa}"
+TF_CONTAINER="${TF_CONTAINER:-tfstate}"
 
 echo -e "${BLUE}🚀 Starting DevOps The Hard Way - Azure Deployment${NC}"
 echo -e "${BLUE}Project: ${PROJECT_NAME}${NC}"
@@ -98,15 +99,17 @@ echo ""
 
 # Step 3: Create Azure AD Group
 print_step "3" "Creating Azure AD Group for AKS Admins"
-cd "$REPO_ROOT/1-Azure"
-if [ -f "scripts/2-create-azure-ad-group.sh" ]; then
-    chmod +x scripts/2-create-azure-ad-group.sh
-    ./scripts/2-create-azure-ad-group.sh
+GROUP_DISPLAY_NAME="AKS-Admins-${PROJECT_NAME}"
+EXISTING_GROUP_ID=$(az ad group show --group "$GROUP_DISPLAY_NAME" --query id -o tsv 2>/dev/null || true)
+if [ -n "$EXISTING_GROUP_ID" ]; then
+    GROUP_ID="$EXISTING_GROUP_ID"
+    echo -e "${GREEN}✅ Reusing existing AD group: ${GROUP_DISPLAY_NAME} (${GROUP_ID})${NC}"
 else
-    echo -e "${YELLOW}⚠️  Creating AD group manually...${NC}"
-    GROUP_ID=$(az ad group create --display-name "AKS-Admins-${PROJECT_NAME}" --mail-nickname "aks-admins-${PROJECT_NAME}" --query id -o tsv)
-    echo "Created AD Group with ID: $GROUP_ID"
-    echo "Please update terraform.tfvars with this group ID"
+    GROUP_ID=$(az ad group create \
+        --display-name "$GROUP_DISPLAY_NAME" \
+        --mail-nickname "aks-admins-${PROJECT_NAME}" \
+        --query id -o tsv)
+    echo -e "${GREEN}✅ Created AD group: ${GROUP_DISPLAY_NAME} (${GROUP_ID})${NC}"
 fi
 echo ""
 
@@ -145,7 +148,8 @@ echo ""
 print_step "7" "Deploying AKS Cluster and IAM Roles"
 cd "$REPO_ROOT/2-Terraform-AZURE-Services-Creation/4-aks"
 tf_init "aks-terraform.tfstate"
-terraform plan -out=tfplan
+# Override the AD group ID with the one created/found in step 3
+terraform plan -out=tfplan -var "aks_admins_group_object_id=${GROUP_ID}"
 terraform apply tfplan
 
 # Get AKS credentials

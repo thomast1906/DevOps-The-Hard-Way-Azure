@@ -16,7 +16,8 @@ NC='\033[0m' # No Color
 PROJECT_NAME="${PROJECT_NAME:-devopsthehardway}"
 LOCATION="${LOCATION:-uksouth}"
 RESOURCE_GROUP="${PROJECT_NAME}-rg"
-TERRAFORM_RG="${PROJECT_NAME}-terraform-rg"
+# Must match 1-Azure/scripts/1-create-terraform-storage.sh naming
+TERRAFORM_RG="${TF_RG:-devopshardway-rg}"
 
 echo -e "${RED}🗑️  DevOps The Hard Way - Azure - CLEANUP${NC}"
 echo -e "${RED}⚠️  WARNING: This will DELETE ALL resources by removing resource groups!${NC}"
