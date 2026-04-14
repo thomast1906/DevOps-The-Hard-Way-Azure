@@ -34,7 +34,7 @@ Each component is organised in its own directory with a consistent structure:
 Before starting these labs, ensure you have:
 
 1. Completed the steps in the [1-Azure](../1-Azure) section
-2. Terraform installed (version 1.9.8 or higher)
+2. Terraform installed (version 1.14.8 or higher)
 3. Azure CLI installed and configured (`az login` executed)
 4. Basic familiarity with Terraform and Azure infrastructure concepts
 

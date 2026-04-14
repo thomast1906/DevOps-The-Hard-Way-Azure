@@ -37,31 +37,31 @@ jobs:
     
     steps:
     - name: 📥 Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: 🔐 Azure Login
-      uses: azure/login@v2
+      uses: azure/login@v3
       with:
         client-id: ${{ secrets.AZURE_AD_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: 🏗️ Setup Terraform
-      uses: hashicorp/setup-terraform@v3
+      uses: hashicorp/setup-terraform@v4
       with:
-        terraform_version: 1.9.8
+        terraform_version: 1.14.8
         terraform_wrapper: false
 
     - name: 🐳 Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+      uses: docker/setup-buildx-action@v4
 
     - name: ☸️ Setup kubectl
-      uses: azure/setup-kubectl@v4
+      uses: azure/setup-kubectl@v5
       with:
         version: 'latest'
 
     - name: ⚙️ Setup Helm
-      uses: azure/setup-helm@v4
+      uses: azure/setup-helm@v5
       with:
         version: 'latest'
 
@@ -140,7 +140,7 @@ jobs:
         location                  = "$LOCATION"
         network_address_space     = "192.168.0.0/16"
         aks_subnet_address_name   = "aks"
-        aks_subnet_address_prefix = "192.168.0.0/22"
+        aks_subnet_address_prefix = "192.168.0.0/24"
         subnet_address_name       = "appgw"
         subnet_address_prefix     = "192.168.4.0/24"
         
@@ -344,28 +344,28 @@ jobs:
     
     steps:
     - name: 📥 Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: 🔐 Azure Login
-      uses: azure/login@v2
+      uses: azure/login@v3
       with:
         client-id: ${{ secrets.AZURE_AD_CLIENT_ID }}
         tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: 🏗️ Setup Terraform
-      uses: hashicorp/setup-terraform@v3
+      uses: hashicorp/setup-terraform@v4
       with:
-        terraform_version: 1.9.8
+        terraform_version: 1.14.8
         terraform_wrapper: false
 
     - name: ☸️ Setup kubectl
-      uses: azure/setup-kubectl@v4
+      uses: azure/setup-kubectl@v5
       with:
         version: 'latest'
 
     - name: ⚙️ Setup Helm
-      uses: azure/setup-helm@v4
+      uses: azure/setup-helm@v5
       with:
         version: 'latest'
 

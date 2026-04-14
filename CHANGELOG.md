@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2026-04-14] - Dependency & Version Upgrades
+
+### Changed
+- **Terraform**: Required version bumped from `>= 1.9.8` to `>= 1.14.0, < 2.0.0`; pinned to `1.14.8` in CI workflows
+- **Azure provider (azurerm)**: Updated from `>= 4.28.0` to `>= 4.68.0, < 5.0.0` across all modules
+- **GitHub Actions**:
+  - `actions/checkout`: v4 → v6
+  - `azure/login`: v2 → v3
+  - `azure/setup-kubectl`: v4 → v5
+  - `azure/setup-helm`: v4 → v5
+  - `docker/setup-buildx-action`: v3 → v4
+  - `hashicorp/setup-terraform`: v3 → v4
+  - `stefanzweifel/git-auto-commit-action`: v5 → v7
+- **Flask**: 3.0.3 → 3.1.3
+- **Werkzeug**: 3.0.4 → 3.1.8
+
+### Fixed
+- `scripts/deploy-all.sh`: Resolved path-resolution bug where all `cd` calls were relative to the working directory rather than the repo root, causing failures from step 2 onwards. Script now computes `REPO_ROOT` from its own location and uses absolute paths throughout.
+- `scripts/deploy-all.sh`: `terraform init` now passes `-backend-config` flags matching the dynamic `${PROJECT_NAME}` storage account, consistent with the GitHub Actions workflow.
+- `scripts/deploy-all.sh`: Fixed deprecated `--query objectId` → `--query id` for Azure AD group creation.
+
+### Documentation
+- `Test-lab-only.md`: Rewritten with accurate version table, AKS version verification step, environment variable reference, and step-by-step description of what the deploy script does.
+- `2-Terraform-AZURE-Services-Creation/README.md` and `1-Create-ACR.md`: Updated Terraform version prerequisite references.
+
 ## [2025-07-28] - Major Update
 
 ### Added

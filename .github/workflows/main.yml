@@ -62,12 +62,12 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v3
+      uses: hashicorp/setup-terraform@v4
       with:
-        terraform_version: 1.9.8
+        terraform_version: 1.14.8
         terraform_wrapper: true
 
     # Add in tutorial 6-Terarform-Docs
@@ -96,7 +96,7 @@ jobs:
       working-directory: ./2-Terraform-AZURE-Services-Creation/4-aks
 
     - name: Auto Commit Changes
-      uses: stefanzweifel/git-auto-commit-action@v5
+      uses: stefanzweifel/git-auto-commit-action@v7
       if: github.event_name == 'pull_request'
       with:
         commit_message: "Terraform fmt"
