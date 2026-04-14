@@ -27,6 +27,19 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "Internet"
     destination_address_prefix = "*"
   }
+
+  # Required for Azure Load Balancer health probes (AGC infrastructure)
+  security_rule {
+    name                       = "Allow-AzureLoadBalancer-Inbound"
+    priority                   = 120
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "AzureLoadBalancer"
+    destination_address_prefix = "*"
+  }
 }
 
 resource "azurerm_subnet_network_security_group_association" "aks_subnet" {
