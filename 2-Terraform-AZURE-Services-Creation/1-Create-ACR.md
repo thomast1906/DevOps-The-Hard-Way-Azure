@@ -23,7 +23,7 @@ By the end of this tutorial, you will:
 
 ### ✅ **Prerequisites Checklist**
 Before starting, ensure you have:
-- [ ] Terraform installed (version 1.9.8 or later)
+- [ ] Terraform installed (version 1.14.8 or later)
 - [ ] Azure CLI installed and configured (`az login` completed)
 - [ ] Storage account for Terraform state already created (from 1-Azure section)
 - [ ] Basic understanding of Terraform and ACR concepts
