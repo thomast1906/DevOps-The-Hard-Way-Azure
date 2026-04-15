@@ -30,7 +30,7 @@ export PROJECT_NAME="devopsthehardway"   # Prefix for all Azure resources
 export LOCATION="uksouth"                # Azure region
 ```
 
-> **AKS version note:** The deployment targets Kubernetes `1.33`. Verify it is available in your chosen region before deploying:
+> **AKS version note:** The deployment targets Kubernetes `1.35`. Verify it is available in your chosen region before deploying:
 > ```bash
 > az aks get-versions --location uksouth --query "values[].version" -o table
 > ```
@@ -80,7 +80,7 @@ Choose an environment (`dev` / `staging` / `prod`) and optionally enable **Destr
 |-----------|---------|
 | Terraform | 1.14.8 |
 | Azure Provider (azurerm) | ~> 4.68 |
-| AKS Kubernetes | 1.33 |
+| AKS Kubernetes | 1.35 |
 | Python base image | 3.13-slim |
 | Flask | 3.1.3 |
 | Werkzeug | 3.1.8 |

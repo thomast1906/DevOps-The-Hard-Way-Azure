@@ -96,8 +96,8 @@ By the end of this tutorial, you will:
    **✅ Expected Output:**
    ```
    NAME                       STATUS   ROLES   AGE   VERSION
-   aks-default-12345678-0     Ready    agent   1h    v1.33.x
-   aks-default-12345678-1     Ready    agent   1h    v1.33.x
+   aks-default-12345678-0     Ready    agent   1h    v1.35.x
+   aks-default-12345678-1     Ready    agent   1h    v1.35.x
    ```
 
 8. **🔍 Get Cluster Information**

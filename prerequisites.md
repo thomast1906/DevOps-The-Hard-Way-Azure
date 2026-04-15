@@ -141,7 +141,7 @@ docker build --help
 ```bash
 # Verify installation
 kubectl version --client
-# Should show version 1.33.x or compatible
+# Should show version 1.35.x or compatible
 ```
 
 **🔐 kubelogin - Azure authentication plugin**
