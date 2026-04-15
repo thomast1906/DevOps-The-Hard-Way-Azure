@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [2026-04-14] - Dependency & Version Upgrades
+## [2026-04-15] - AKS Version Upgrade
+
+### Changed
+- **Kubernetes version**: Updated from 1.33 to 1.35
+
+
 
 ### Changed
 - **Terraform**: Required version bumped from `>= 1.9.8` to `>= 1.14.0, < 2.0.0`; pinned to `1.14.8` in CI workflows

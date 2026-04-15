@@ -58,7 +58,7 @@ Before starting, ensure you have:
    ```hcl
    # Core cluster settings
    name               = "your-unique-name"
-   kubernetes_version = "1.33"
+   kubernetes_version = "1.35"
    location          = "uksouth"
    
    # Node configuration
@@ -84,7 +84,7 @@ Before starting, ensure you have:
 
    **📄 aks.tf - Main Cluster Configuration:**
    - [ ] **AKS Cluster** (`azurerm_kubernetes_cluster`)
-     - Kubernetes 1.33 with latest features
+     - Kubernetes 1.35 with latest features
      - Auto-scaling: 1-3 nodes for cost optimization
      - Availability zones for high availability
      - Azure RBAC integration
@@ -145,7 +145,7 @@ Before starting, ensure you have:
    - [ ] Locate your AKS cluster
    - [ ] Verify cluster status: **Running**
    - [ ] Check node pool: **Ready** with correct node count
-   - [ ] Confirm Kubernetes version: **1.33**
+   - [ ] Confirm Kubernetes version: **1.35**
 
 2. **Get Cluster Credentials:**
    ```bash
@@ -265,7 +265,7 @@ Test your understanding:
 🏆 **Kubernetes Orchestrator** - You've successfully deployed a production-ready AKS cluster with advanced security!
 
 ### **What You've Accomplished:**
-- [x] Deployed AKS cluster with Kubernetes 1.33
+- [x] Deployed AKS cluster with Kubernetes 1.35
 - [x] Configured auto-scaling and high availability
 - [x] Implemented Azure RBAC and managed identities
 - [x] Set up network policies for security

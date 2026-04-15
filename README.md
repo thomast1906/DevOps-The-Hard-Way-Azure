@@ -16,7 +16,7 @@ A comprehensive DevOps tutorial series for Microsoft Azure — a step-by-step le
 ### Enterprise-Grade Content
 - Real-world scenarios based on actual industry practices
 - Security-first approach with best practices throughout
-- Modern tool versions (Kubernetes 1.33, Terraform 1.14.0, Python 3.13)
+- Modern tool versions (Kubernetes 1.35, Terraform 1.14.0, Python 3.13)
 - Production-ready configurations you can use in your organization
 - Comprehensive documentation that rivals premium training platforms
 
@@ -51,7 +51,7 @@ Transform the **thomasthornton.cloud** application from legacy infrastructure to
 | **Terraform** | Infrastructure as Code | >= 1.14.0 |
 | **azurerm Provider** | Azure Terraform provider | 4.68.0 |
 | **Docker** | Containerization | Latest |
-| **Kubernetes (AKS)** | Container orchestration | v1.33 |
+| **Kubernetes (AKS)** | Container orchestration | v1.35 |
 | **ALB Controller** | Azure Load Balancer for K8s | v1.9.16 |
 | **Python** | Application runtime | v3.13 |
 | **Flask** | Web framework | v3.1.3 |
