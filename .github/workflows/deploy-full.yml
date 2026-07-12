@@ -37,7 +37,7 @@ jobs:
     
     steps:
     - name: 📥 Checkout Code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
 
     - name: 🔐 Azure Login
       uses: azure/login@v3
@@ -344,7 +344,7 @@ jobs:
     
     steps:
     - name: 📥 Checkout Code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
 
     - name: 🔐 Azure Login
       uses: azure/login@v3
